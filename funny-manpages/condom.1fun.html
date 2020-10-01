@@ -1,0 +1,408 @@
+<HTML><HEAD><TITLE>Manpage of CONDOM</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>CONDOM</H1>
+Section: User Commands  (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+condom - protection against viruses and prevention of child processes
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>condom</B>
+
+[<I>options</I>]
+
+[<I>processid</I>]
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<I>condom</I>
+
+provides protection against System Transmitted
+Viruses (STVs) that may invade your system.
+Although the spread of such viruses across a network
+can only be abated by aware and cautious users,
+<I>condom</I>
+
+is the only highly effective means of preventing
+viruses from entering your system (see
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+celibacy">celibacy</A></I>(1)).
+
+Any data passed to
+<I>condom</I>
+
+by the protected process will be blocked, as specified by
+the value of the
+<B>-s</B>
+
+option (see
+<B>OPTIONS</B>
+
+below).
+<I>condom</I>
+
+is known to
+defend against the following viruses and other malicious
+afflictions:
+<DL COMPACT><DT><DD>
+<DL COMPACT>
+<DT>*<DD>
+AIDS
+
+<DT>*<DD>
+Herpes Simplex (genital varieties)
+<DT>*<DD>
+Syphilis
+<DT>*<DD>
+Crabs
+<DT>*<DD>
+Genital warts
+<DT>*<DD>
+Gonhorrea
+<DT>*<DD>
+Chlamydia
+<DT>*<DD>
+Michelangelo
+<DT>*<DD>
+Jerusalem
+
+</DL>
+</DL>
+
+<P>
+
+When used alone or in conjunction with
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+pill">pill</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sponge">sponge</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+foam">foam</A></I>(1),
+
+and/or
+<I><A HREF="http://localhost/cgi-bin/man/man2html?3+setiud">setiud</A></I>(3),
+
+<I>condom</I>
+
+also prevents the conception of a child process.
+If invoked from within a synchronous process,
+<I>condom</I>
+
+has, by default, an 80% chance of preventing the external processes
+from becoming parent processes (see the
+<B>-s</B>
+
+option below).
+When other process contraceptives are used,
+the chance of preventing a child process from being forked
+becomes much greater.
+See
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+pill">pill</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sponge">sponge</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+foam">foam</A></I>(1),
+
+and
+<I><A HREF="http://localhost/cgi-bin/man/man2html?3+setiud">setiud</A></I>(3)
+
+for more information.
+<P>
+
+If no options are given, the current user's login process (as
+determined by the environment variable USER) is protected with a
+Trojan rough-cut latex condom without a reservoir tip.
+The optional
+``<I>processid</I>''
+
+argument is an integer specifying the process to protect.
+<P>
+
+NOTE:
+<I>condom</I>
+
+may only be used with a hard disk.
+<I>condom</I>
+
+will terminate abnormally with exit code -1 if used with a floppy
+disk (see
+<B>DIAGNOSTICS</B>
+
+below).
+
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+The following options may be given to
+<I>condom</I>:
+
+<DL COMPACT>
+<DT><B>-b</B><I> brand</I>
+
+<DD>
+<I>brand</I>s
+
+are as follows:
+<DL COMPACT><DT><DD>
+<DL COMPACT>
+<DT>trojan (default)<DD>
+
+<DT>ramses<DD>
+<DT>sheik<DD>
+<DT>goldcoin<DD>
+<DT>fourex<DD>
+
+</DL>
+</DL>
+
+<DT><B>-m</B><I> material</I>
+
+<DD>
+The valid
+<I>material</I>s
+
+are:
+<DL COMPACT><DT><DD>
+<DL COMPACT>
+<DT>
+<DD>
+latex (default)
+<DT>saranwrap<DD>
+<DT>membrane<DD>
+<B>WARNING!</B>
+
+The membrane option is
+<I>not</I>
+
+endorsed by the System Administrator General as an
+effective barrier against certain viruses.
+It is supported only for the sake of tradition.
+
+</DL>
+</DL>
+
+<DT><B>-f</B><I> flavor</I>
+
+<DD>
+The following
+<I>flavor</I>s
+
+are currently supported:
+<DL COMPACT><DT><DD>
+<DL COMPACT>
+<DT>
+<DD>
+plain (default)
+<DT>apple<DD>
+<DT>banana<DD>
+<DT>cherry<DD>
+<DT>cinnamon<DD>
+<DT>licorice<DD>
+<DT>orange<DD>
+<DT>peppermint<DD>
+<DT>raspberry<DD>
+<DT>spearmint<DD>
+<DT>strawberry<DD>
+
+</DL>
+</DL>
+
+<DT><B>-r</B>
+
+<DD>
+Toggle reservoir tip (default is no reservoir tip)
+<DT><B>-s</B><I> strength</I>
+
+<DD>
+<I>strength</I>
+
+is an integer between 20 and 100 specifying the resilience of
+<I>condom</I>
+
+against data passed to
+<I>condom</I>
+
+by the protected process.
+Using a larger
+value of
+<I>strength</I>
+
+increases
+<I>condom</I>'s
+
+protective abilities,
+but also reduces interprocess communication.
+A smaller value of
+<I>strength</I>
+
+increases interprocess communication,
+but also increases the likelihood of a security breach.
+An extremely vigorous process or
+one passing an enormous amount of data to
+<I>condom</I>
+
+will increase the chance of
+<I>condom</I>'s
+
+failure.
+The default
+<I>strength</I>
+
+is 80%.
+
+<DT><B>-t</B><I> texture</I>
+
+<DD>
+Valid
+<I>texture</I>s
+
+are:
+<DL COMPACT><DT><DD>
+<DL COMPACT>
+<DT>
+<DD>
+rough (default)
+<DT>ribbed<DD>
+<DT>bumps<DD>
+<DT>lubricated<DD>
+(provides smoother interaction between processes)
+
+</DL>
+</DL>
+
+</DL>
+<P>
+
+WARNING: The use of an external application to
+<I>condom</I>
+
+in order to reduce friction between processes has been proven in
+benchmark tests to decrease
+<I>condom</I>'s
+
+strength factor!
+If execution speed is important to your process, use the
+``<B>-t</B>
+
+<B>lubricated</B>''
+
+option.
+<A NAME="lbAF">&nbsp;</A>
+<H2>DIAGNOSTICS</H2>
+
+<I>condom</I>
+
+terminates with one of the following exit codes:
+<DL COMPACT>
+<DT>-1<DD>
+An attempt was made to use
+<I>condom</I>
+
+on a floppy disk.
+<DT>0<DD>
+<I>condom</I>
+
+exited successfully (no data was passed to the synchronous process).
+<DT>1<DD>
+<I>condom</I>
+
+failed and data was allowed through.
+The danger of transmission of an STV or the forking of a child process
+is inversely proportional to the number of other protections employed
+and is directly proportional to the ages of the processes involved.
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUGS</H2>
+
+<I>condom</I>
+
+is
+<B>NOT</B>
+
+100% effective at preventing a child process
+from being forked or at deterring the invasion of a virus (although
+the System Administrator General has deemed that
+<I>condom</I>
+
+is the most
+effective means of preventing the spread of system transmitted
+viruses).
+See
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+celibacy">celibacy</A></I>(1)
+
+for information on a 100% effective program
+for preventing these problems.
+<P>
+
+Remember, the use of
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sex">sex</A></I>(1)
+
+and other related routines
+should only occur between mature, consenting processes.
+If you must use
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sex">sex</A></I>(1),
+
+please employ
+<I>condom</I>
+
+to protect your process and your synchronous process.
+If we are all responsible, we can stop the spread of STVs.
+<A NAME="lbAH">&nbsp;</A>
+<H2>AUTHORS and HISTORY</H2>
+
+The original version of
+<I>condom</I>
+
+was released in Roman times and was only marginally effective.
+With the advent of modern technology,
+<I>condom</I>
+
+now supports many more options and is much more effective.
+<P>
+
+The current release of
+<I>condom</I>
+
+was written by Ken Maupin at the University of Washington
+(maupin@cs.washington.edu) and was last updated on 10/7/92.
+<A NAME="lbAI">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+celibacy">celibacy</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sex">sex</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+pill">pill</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sponge">sponge</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+foam">foam</A></I>(1),
+
+and
+<I><A HREF="http://localhost/cgi-bin/man/man2html?3+setiud">setiud</A></I>(3)
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">DIAGNOSTICS</A><DD>
+<DT><A HREF="#lbAG">BUGS</A><DD>
+<DT><A HREF="#lbAH">AUTHORS and HISTORY</A><DD>
+<DT><A HREF="#lbAI">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

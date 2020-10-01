@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>麻雀　和了り判定・シャンテン数計算プログラム</title>
+</head>
+<body>
+	<a href="../../index.html">Home</a> &gt; 麻雀　和了り判定・シャンテン数計算プログラム
+	<h1>麻雀　和了り判定・シャンテン数計算プログラム</h1>
+	
+	<h2>
+		<a href="hairi.php">PHP版　和了り判定・シャンテン数計算プログラム（ソース付）</a><br>
+	</h2>
+	<p>
+		※PHP版は手牌に34種の牌を加えて和了り形になるか判定するアルゴリズムを使っているため、遅いです。そのため、2シャンテンまでしか判定できないように制限を加えてあります。C#版では圧倒的に速い別のアルゴリズムを使っています。 
+	</p>
+	
+	<h2><a href="https://drive.google.com/uc?export=download&id=16MoGPbZRSFHAMV-Rf-ftBLsbyRa1_mzn">C#版　シャンテン数計算プログラム（ソース付）</a></h2>
+
+	<p>
+		和了り判定には<a href="http://www5f.biglobe.ne.jp/~kenmo/program/majang/agari/agari.html">麻雀の作り方（あがり判定）</a>のアルゴリズムを使用し、いくつかの問題点を修正しています（詳細はソースを参照）<br>
+		シャンテン数計算には<a href="http://mahjong.ara3.net/etc/shanten/index.htm">向聴数を求めるアルゴリズム - あらの（一人）麻雀研究所</a>のアルゴリズムを使用しています。<br>
+	</p>
+	<ul>
+		<li>チートイ、国士には未対応</li>
+		<li>高速化のためのテーブルは使用していません</li>
+		<li>上記ページの解説中の「面子×２ ＋ 面子候補」が最大と「面子×１０ ＋ 面子候補」が最大となる候補を選ぶところは意味がわからなかったので、直接シャンテン数が最小になる候補を探すように変更してあります。</li>
+		<li>あらのさん提供の向聴数問題集1000問にすべて正解を出します</li>
+	</ul>
+
+</body>
+</html>

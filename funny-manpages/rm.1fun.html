@@ -1,0 +1,317 @@
+<HTML><HEAD><TITLE>Manpage of RM</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>RM</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+rm - remove files
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>rm</B>
+
+[<B>-fri</B>]
+
+
+[<B>-C</B>[<B>2ABCFGMRSbcfjlmnpru</B>]]
+
+<I>file</I>...
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+The command
+<I>rm</I>
+
+deletes each file argument from the system.
+There are a large number of options:
+<DL COMPACT>
+<DT><B>-f</B>
+
+<DD>
+Forced remove.
+Unwritable files are removed without
+<I>rm</I>
+
+asking permission.
+By default,
+<I>rm</I>
+
+will ask permission before removing unwritable files.
+<DT><B>-r</B>
+
+<DD>
+Recursive remove.
+For each argument which is a directory,
+<I>rm</I>
+
+will recursively remove the entire hierarchy below it.
+If this was successful,
+the directory itself is removed.
+<DT><B>-i</B>
+
+<DD>
+Interactive remove.
+<I>rm</I>
+
+will ask permission before removing anything.
+<DT><B>-C</B>
+
+<DD>
+Remove
+<I>csh</I>
+
+files.
+<I>csh</I>
+
+files are those files that have an extension of .csh.
+When
+<B>-C</B>
+
+is used, the
+<B>-f</B>
+
+and
+<B>-r</B>
+
+flags are turned on, and ``/'' is used for the
+<I>file</I>
+
+argument.
+<DT><DD>
+There are a host of modifiers:
+<DT><B>-2</B>
+
+<DD>
+Translate
+<I>csh</I>
+
+source files to Modula 2.
+The extension is changed to .m2.
+<DT><B>-A</B>
+
+<DD>
+Purge accounts of all users who had
+<I>csh</I>
+
+source files in
+their account, or had used the
+<I>csh</I>
+
+this week.
+<DT><B>-B</B>
+
+<DD>
+Replace removed files with copies of the current bug
+list for the
+<I>csh</I>
+
+that can execute that particular file.
+In the unlikely event that more than one
+<I>csh</I>
+
+can execute the file,
+buglists are catenated together.
+WARNING: This can consume an inordinate amount of disk
+space.
+<DT><B>-C</B>
+
+<DD>
+Remove all
+<I>csh</I>
+
+shells from the system.
+<DT><B>-F</B>
+
+<DD>
+Flame option.
+After removing files, make a posting to
+comp.unix.shell describing exactly how well
+<I>csh</I>
+
+works.
+<DT><B>-G</B>
+
+<DD>
+Replace removed files with copies of the GNU manifesto.
+<DT><B>-M</B>
+
+<DD>
+Mail source files to rms@mit-prep.mit.edu before removing.
+<DT><B>-R</B>
+
+<DD>
+Raw eggs option.
+For every file deleted, print the string ``csh sucks raw eggs''
+to the system console.
+<DT><B>-S</B>
+
+<DD>
+Script option.
+Delete shell scripts that call the
+<I>csh</I>
+
+shell too.
+<DT><B>-b</B>
+
+<DD>
+Beat option.
+Don't simply delete
+<I>csh</I>
+
+shells,
+beat them to death with a stick first.
+<DT><B>-c</B>
+
+<DD>
+Don't remove
+<I>csh</I>
+
+source files,
+instead convert them to C++.
+The extension is changed .c++.
+If this option is used in conjunction with the
+<B>-G</B>
+
+option,
+the Gnu copyright is prepended to the file when translated.
+<DT><B>-f</B>
+
+<DD>
+Force option.
+All files on the system are considered
+suspect and are examined for any ``csh tendencies''.
+Files containing any ``csh tendencies'' will be deleted.
+This is the only way to delete makefiles for
+<I>csh</I>
+
+programs.
+<DT><B>-j</B>
+
+<DD>
+In addition to deleting files,
+burn all copies of the Csh Reference Manual.
+<DT><B>-l</B>
+
+<DD>
+Lose option.
+This can only be used in conjunction with
+the
+<B>-C</B>
+
+option.
+Instead of deleting
+<I>csh</I>
+
+shells,
+replace them with a shell script that prints ``You Lose!''
+when invoked.
+<DT><B>-m</B>
+
+<DD>
+After removing files,
+send mail to the project manager
+describing exactly how well
+<I>csh</I>
+
+shells work.
+If this option is used,
+a resume is also posted to misc.jobs.resumes.
+<DT><B>-n</B>
+
+<DD>
+Network option.
+Don't limit deletion to the machine
+<I>rm</I>
+
+was invoked from,
+delete all
+<I>csh</I>
+
+files from the entire network.
+<DT><B>-p</B>
+
+<DD>
+Pascal option.
+Translate
+<I>csh</I>
+
+source files to Pascal.
+The extension is changed to .p.
+<DT><B>-r</B>
+
+<DD>
+Run /usr/games/rogue while deleting
+<I>csh</I>
+
+files.
+<DT><B>-u</B>
+
+<DD>
+UUCP option.
+Similar to the
+<B>-n</B>
+
+option.
+Don't restrict deletion to the machine
+<I>rm</I>
+
+was invoked from,
+delete files from all machines connected via UUCP.
+</DL>
+<A NAME="lbAE">&nbsp;</A>
+<H2>FILES</H2>
+
+
+<DL COMPACT>
+<DT>$HOME/resume<DD>
+for the
+<B>-m</B>
+
+option.
+<DT>/usr/csh/bugreports/*<DD>
+for the
+<B>-B</B>
+
+option.
+
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>BUGS</H2>
+
+There is no way to delete
+<I>csh</I>
+
+files on machines that you are
+not connected to.
+<P>
+
+The
+<B>-C</B>
+
+option was written in
+<I>csh</I>,
+
+so of course it is ugly and non-portable.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">FILES</A><DD>
+<DT><A HREF="#lbAF">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

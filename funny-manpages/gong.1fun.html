@@ -1,0 +1,135 @@
+<HTML><HEAD><TITLE>Manpage of GONG</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>GONG</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+gong - evaluate process performance
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>gong</B>
+
+[<B>-f</B>]
+
+[<B>-a</B>]
+
+process-id
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<I>Gong</I>
+
+is used to evaluate the performance of a process that is in execution.
+<P>
+
+The
+<I>process-id</I>
+
+is the process number of the process whose performance is to be
+evaluated.
+The evaluation is performed by a set of three ``panelist'' routines,
+each of which analyzes one aspect (time, space, and tonality)
+of the performance of the process.
+If any of these routines is not amused by the performance,
+the process being analyzed is sent the
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+gong">gong</A></I>(2)
+
+signal.
+In addition, the process-id of the evaluated process is written
+on the standard gong, for possible future corrective action.
+(It is suggested that the standard gong
+be an audible alarm for proper effect.)
+It is expected that after being
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+gong">gong</A></I>(2)ed,
+
+the process will promptly commit suicide.
+<P>
+
+The
+<B>-f</B>
+
+keyletter argument
+indicates that
+<I>gong</I>
+
+is to invoke
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+flog">flog</A></I>(1)
+
+with the
+<I>unmerciful</I>
+
+argument if the process does not respond to
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+gong">gong</A></I>(2)ing.
+
+In the absence of this argument, the process is continuously
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+gong">gong</A></I>(2)ed,
+
+which may lead to the process becoming a
+deaf zombie.
+<P>
+
+The
+<B>-a</B>
+
+keyletter argument indicates that if all three of the panelist
+routines
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+gong">gong</A></I>(2)
+
+a process, the process should be unmercifully
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+flog">flog</A></I>(1)ged
+
+whether or not the
+<B>-f</B>
+
+keyletter is supplied.
+<A NAME="lbAE">&nbsp;</A>
+<H2>FILES</H2>
+
+/dev/ding.dong is the standard gong.
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+On the Applicability of Gonging
+to the Performance and Merit Review Process,
+<I>Journal of Irreproducible Results</I>,
+
+vol. 263, issue 19, pp. 253-307.
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUGS</H2>
+
+If the named process does not exist, it is possible that
+<I>gong</I>
+
+will attempt an evaluation of itself, which may lead to a condition
+known as compounded double ringing (see
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+echo">echo</A></I>(1)).
+
+Therefore, it is recommended that
+<I>gong</I>
+
+be used with extreme care.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">FILES</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+<DT><A HREF="#lbAG">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

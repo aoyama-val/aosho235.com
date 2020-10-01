@@ -1,0 +1,207 @@
+<HTML><HEAD><TITLE>Manpage of RTFM</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>RTFM</H1>
+Section: User Commands  (1)<BR>Updated: July 27, 1997<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+rtfm - a response for easy questions from clueless lusers
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>rtfm </B>
+
+<B>[ -p ] [ -h ] [ -d option ] [ -i interval ] [ -a action ] [ -q luser]</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>rtfm </B>
+
+is a command for system administrators to use in dealing with new users. 
+<B>rtfm </B>
+
+is useful for dealing with users having trouble with their pictures downloaded 
+from alt.binaries.pictures.erotica. 
+<B>rtfm </B>
+
+will continue to run until killed by hand, using `kill processid'.
+<B>rtfm </B>
+
+can be invoked by anyone who has enough of a clue to know what a man page is.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-p </B>
+
+<DD>
+Give the answer in a polite fashion.
+<DT><B>-h </B>
+
+<DD>
+Tell the clueless luser to go to hell. Used with the -p option, 
+they'll look forward to the trip.
+<DT><B>-d option </B>
+
+<DD>
+Debug mode using option where option is one of the following:
+<P>
+<I>query</I>
+
+Ask the luser what part of rtfm that he or she does not understand.
+<P>
+<I>planet</I>
+
+Ask what planet the luser is from.
+<BR>&nbsp;&nbsp;
+<I>literacy</I>
+
+Ask the luser if the luser can read.
+<P>
+<I>english</I>
+
+Ask the luser if the luser understands English.
+<P>
+<I>Mac </I>
+
+Ask the luser if the luser has ever used a computer other than a Macintosh.
+<P>
+<I>Nintendo </I>
+
+Same as the Mac option, but slightly more harsh.
+<DT><B>-i interval</B>
+
+<DD>
+Enable within interval seconds. interval is the time
+between a luser asking the same damn fool question.
+This option must be activated for the 
+<B>-a </B>
+
+option. It
+stores the time of the question in 
+<B>/var/run/luser </B>
+
+and checks that file each time that rtfm is activated.
+interval is a number of minutes, of the form xxx.xx
+where each x is a decimal digit. The default is 5.00
+minutes.
+<DT><B>-a action</B>
+
+<DD>
+This defines some action to be taken in the event that
+the 
+<B>-i </B>
+
+flag condition is met. action can be defined
+either at the flag level or by a file. The options for
+flags are as follows:
+<P>
+<I>scream</I>
+
+Let out a scream of utter frustration.
+<P>
+<I>hair</I>
+
+Rip out your hair in total frustration.
+<P>
+<I>rm</I>
+
+Automatic command ran in lusers home directory. It
+can have an addition 
+<B>-rf </B>
+
+flag added.
+<P>
+<I>ignore</I>
+
+Ignore the luser.
+<P>
+<I>warn</I>
+
+Warn the other sysadmins.
+<P>
+<I>forward</I>
+
+Forward to CNS advising. Particullary if the
+complaint is /dev/null is full.
+<P>
+<I>kill</I>
+
+Kill all the lusers processes.
+<P>
+<I>FILE=file.name </I>
+
+Use a file to define a course of
+actions. This can be any executeable file except those
+using ksh, which no god-fearing right-thinking sysadmin
+would be caught using lest he be struck down by the
+wrath of God.
+<DT><B>-q luser</B>
+
+<DD>
+Query file 
+<B>/etc/luser </B>
+
+to see if luser is a real luser or a first time luser.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT><B>/etc/luser</B>
+
+<DD>
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<DL COMPACT>
+<DT><I><A HREF="http://localhost/cgi-bin/man/man2html?2+mr.biff">mr.biff</A></I>(2),
+
+<DD>
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>BUGS</H2>
+
+<B>rtfm </B>
+
+only checks
+<B>/var/run/luser</B>
+
+when the
+<B>-a</B>
+
+option is specified and after the 
+<B>-i</B>
+
+option is invoked. Otherwise 
+<B>/tmp </B>
+
+would fill up rapidly on many systems. Also, core may dump if the 
+<B>-a FILE= </B>
+
+option is anatomically impossible.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">FILES</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DT><A HREF="#lbAH">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

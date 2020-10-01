@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地図ツール</title>
+
+    <link rel="shortcut icon" href="./favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQwWQ4NvbOicfPYLp1sob2B4LRHjCOkw4&libraries=geometry"></script>
+
+    <script src="./map.js"></script>
+
+    <style>
+      html, body  { height: 100%; margin: 0; padding: 0; box-sizing: border-box; }
+      div.main    { float: left; height: 100%; padding-right: 200px; }
+      div.container { height: 100%; padding: 0; }
+      div#gmap { width: calc(100% - 200px); height: 100%; }
+      div#controls { position: absolute; top: 0px; right: 0px; width: 200px;  background: #ffffff; padding: 5px; }
+      textarea#clicked_latlngs { width: 100%; height: 200px; }
+      textarea#pasted_latlngs { width: 100%; height: 200px; }
+      input#center_latlng { width: 100%; }
+      div#div_map_types { position: absolute; top: 0px; left: 0px; z-index: 999;}
+      span.meter { font-size: 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="div_map_types">
+      <select id="map_types">
+        <option value="roadmap">デフォルト</option>
+        <option value="satellite">航空写真</option>
+        <option value="hybrid">デフォルト＋航空写真</option>
+        <option value="terrain">物理地図</option>
+      </select>
+      <br>
+      <input type="text" id="address" placeholder="住所">
+    </div>
+
+    <div id="gmap"></div>
+
+    <div id="controls">
+      <b>緯度経度貼り付け</b>
+      <button onclick="setPastedMarkers()">設置</button>
+      <br>
+      <textarea id="pasted_latlngs" placeholder="緯度,経度。カンマ区切り。1行に1個"></textarea>
+
+      <b>クリック点</b>
+      <br>
+      <textarea id="clicked_latlngs"></textarea>
+
+      <b>中心</b>
+      <button onclick="setCenter()">Go</button>
+      <br>
+      <input id="center_latlng" type="text" placeholder="35.7,139.7">
+
+      <b>距離計算</b>
+      <input id="distance_latlng1" type="text" placeholder="35.7,139.7">
+      <input id="distance_latlng2" type="text" placeholder="35.7,139.7">
+      <input id="distance" type="text" readonly> <span class="meter">メートル</span>
+
+      <br>
+      <b>パスデコード</b>
+      <input id="decode_path" type="text" placeholder="encoded path">
+      <button onclick="decode_path_onclick()">デコード</button>
+
+      <br>
+      <b>円の半径</b>
+      <input id="radius" type="number" value="0" step="100">
+    </div>
+  </body>
+</html>
+<!-- vim: set ts=2 sts=2 sw=2 expandtab list: -->

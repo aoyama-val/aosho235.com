@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>注釈つき vi コマンドリファレンス</title>
+</head>
+<body>
+<h1>注釈つき vi コマンドリファレンス</h1>
+<p>
+vi のコマンドモードの各コマンドに対して、筆者の独断と偏見に基づいた注釈
+を加えながら機能を記述したクイックリファレンスである。
+おまけとして nvi のヘルプをもとに Emacs 風のコマンド名もつけてみた。
+</p>
+
+<dl>
+<dt>a (append-after-cursor)</dt>
+<dd>カーソルの後ろから挿入を開始する。もし a と A がなかったら、行末に文字を挿入することができない。 </dd>
+<dt>b (move-back-word)</dt>
+<dd>前の単語へ移動。h, l では行の終端を越えられないのに、w, b は越えてしまう。この1点をとってもすでに vi の設計が一貫していないことがわかる。</dd>
+<dt>c (change-to-motion)</dt>
+<dd>変更。もっとも有用なコマンドの1つ。しかし実は挙動に例外の多い問題児。なぜ連続する空白の上で cw すると1文字しか削除されないのか？</dd>
+<dt>d (delete-to-motion)</dt>
+<dd>削除。vi は削除に関しては極めて強力である。</dd>
+<dt>e (move-to-end-of-word)</dt>
+<dd>単語の末尾へ移動。単語の末尾へ移動したいのは、大抵末尾に文字を追加したいときだからという理由で :map e ea とする人もいる。参照：<a href="http://www.amazon.co.jp/Unix-Power-Tools-Jerry-Peek/dp/0596003307">UNIX Power Toolsの 18.8</a></dd>
+<dt>f (character-in-line-forward-search)</dt>
+<dd>現在行の指定文字まで移動。Emacs の viper-modeでは現在段落内の指定文字まで移動らしい。確かに、現在行だけに制限する必要は特にないと思う。</dd>
+<dt>h (move-left-by-columns)</dt>
+<dd>左へ移動。viのアイデンティティの1つ。ひょっとして、行頭で h を押しても前の行へ移動できないのは、キーボードで左にあるキーで上へ移動しては混乱するという理由なのだろうか？</dd>
+<dt>i (insert-before-cursor)</dt>
+<dd>カーソルの前から挿入を開始する。「i や a はコマンドモードのコマンドの1つであり、vi にインサートモード・コマンドモードの区別などない。コマンドモードのみである」と主張する者もいる。/ や ? による検索をモードとみなさないことを考えると、あながち無視できないように思われる。しかしインサート中には ^D でインデントを削除したり map と map! の違いがあったりするので、やはりモードがあると考える方が妥当だろう。</dd>
+<dt>j (move-down-by-lines)</dt>
+<dd>下へ移動。vi のアイデンティティの1つ。QWERTY 配列以外のキーボードでは vi はアイデンティティを失う。初代 vi が書かれた ADM3A のキーボード配列は<a href="http://dailynewsagency.com/2012/03/11/here-is-why-vim-uses-the-hjkl-keys-as-arrow-keys/">ADM3A keyboard layout</a>を見よ。</dd>
+<dt>k (move-up-by-lines)</dt>
+<dd>上へ移動。vi のアイデンティティの1つ。</dd>
+<dt>l (move-right-by-columns)</dt>
+<dd>右へ移動。vi のアイデンティティの1つ。</dd>
+<dt>m (set-mark)</dt>
+<dd>マーク。a から z まで26個マークできるが、26個も覚えていられるだろうか。</dd>
+<dt>n (repeat-last-search)</dt>
+<dd>次を検索。</dd>
+<dt>o (append-after-line)</dt>
+<dd>現在行の下に行を挿入。素直に便利。</dd>
+<dt>p (insert-after-cursor-from-buffer)</dt>
+<dd>カーソルの後ろにプット。バッファ内容が行単位の場合はよいが、文字単位の場合は挿入位置が他のエディタと違うので戸惑いやすい。</dd>
+<dt>r (replace-character)</dt>
+<dd>1文字置換。このコマンドを使って1文字挿入のマクロを作ることができる。:map s i_&lt;esc&gt;r</dd>
+<dt>s (substitute-character)</dt>
+<dd>1文字削除してインサートモードに入る。c が移動コマンドと組み合わせて使うものなら、s はカウントと組み合わせて使うものだろう。</dd>
+<dt>t (before-character-in-line-forward-search)</dt>
+<dd>現在行の指定文字の手前まで移動。c,d と仲がいい。</dd>
+<dt>u (undo-last-change)</dt>
+<dd>アンドゥ。アンドゥだから u にバインドされているのはよいが、よく使う hjkliy に近く、間違って押しやすいのはどうか。</dd>
+<dt>w (move-to-next-word)</dt>
+<dd>次の単語へ移動。一口に「次の単語へ移動」といってもその挙動はエディタによって様々である。<br>参照：<a href="http://d.hatena.ne.jp/parasporospa/20060808/1155044076">テキストエディタ「単語単位で移動」の違い</a></dd>
+<dt>x (delete-character)</dt>
+<dd>カーソル下の文字を削除。初心者の方がよく使う。</dd>
+<dt>y (copy-text-to-motion-into-a-cut-buffer)</dt>
+<dd>ヤンク。ヤンクリングは欲しい。</dd>
+<dt>z (reposition-the-screen)</dt>
+<dd>z<Enter>で現在行が画面1行目になるようにスクロールする。z.で画面中央行、z-で画面最下行。</dd>
+<dt>A (append-to-the-line)</dt>
+<dd>行末から挿入を開始する。シフトと A は字面的に鋭さを感じさせるため、柔らかい感じの Emacs の C-e と対照的である。</dd>
+<dt>B (move-back-bigword)</dt>
+<dd>空白区切りで前の単語へ移動。</dd>
+<dt>C (change-to-end-of-line)</dt>
+<dd>行末まで変更。</dd>
+<dt>D (delete-to-end-of-line)</dt>
+<dd>行末まで削除。</dd>
+<dt>E (move-to-end-of-bigword)</dt>
+<dd>空白区切りで単語の末尾へ移動。</dd>
+<dt>F (character-in-line-backward-search)</dt>
+<dd>指定文字まで移動（後方移動）。</dd>
+<dt>G (move-to-line)</dt>
+<dd>バッファの末尾へ移動。カウント指定すると、例えば 34G で34行目へ行けるが、単に移動したいだけなら :34 の方が楽だと思う。このコマンドの意義はむしろ d34G のようにオペレータの範囲を絶対指定できるところにある。これを活用するためには set number の設定が必要である。しかしそうすると画面幅を取られるのが悩ましい。また、小文字の g が空いているのに大文字の G に割り振ったのはなぜか？バッファの先頭へ移動するコマンドが存在しないのはなぜか？というのも謎である。</dd>
+<dt>H (move-to-count-lines-from-screen-top)</dt>
+<dd>画面最上行へ移動。カウント指定で上から n 行目に行けることを覚えておくと意外と使いどころがあるかも？<br>
+<dt>I (insert-before-first-nonblank)</dt>
+<dd>現在行の最初の非空白文字の前から挿入を開始。</dd>
+<dt>J (join-lines)</dt>
+<dd>行を連結。釣針で下の行を引っかけてるイメージで覚えよう。</dd>
+<dt>L (move-to-screen-bottom)</dt>
+<dd>h,l は左右へ移動なのだから、H,L は行の先頭、末尾へ移動の方がふさわしいという意見を見たことがある。</dd>
+<dt>M (move-to-screen-middle)</dt>
+<dd>画面真ん中の行へ移動。</dd>
+<dt>N (reverse-last-search)</dt>
+<dd>逆方向に次を検索。</dd>
+<dt>O (insert-above-line)</dt>
+<dd>現在行の上に行を挿入。</dd>
+<dt>P (insert-before-cursor-from-buffer)</dt>
+<dd>カーソルの前にプット。行単位のプットの場合は p が便利だが、文字単位のプットには P を使いたくなることが多いだろう。</dd>
+<dt>Q (switch-to-ex-mode)</dt>
+<dd>ex モードへ移行。戻ってくるには :visual です。</dd>
+<dt>R (replace-characters)</dt>
+<dd>置換モードへ移行。文字を蹂躙します。</dd>
+<dt>S (substitute-for-the-line)</dt>
+<dd>行を削除し挿入を開始する。cc と同じであるため影が薄い。</dd>
+<dt>T (before-character-in-line-backward-search)</dt>
+<dd>指定文字の手前まで移動（後方検索）。</dd>
+<dt>U (restore-the-current-line)</dt>
+<dd>現在行に対してアンドゥ。多段アンドゥが当り前の現代エディタの前では、なんと貧弱な機能であることか。</dd>
+<dt>W (move-to-next-bigword)</dt>
+<dd>空白区切りで次の単語へ移動。</dd>
+<dt>X (delete-character-before-cursor)</dt>
+<dd>カーソルの前の文字を削除。筆者はほとんど使ったことがない。</dd>
+<dt>Y (copy-line)</dt>
+<dd>1行をヤンク。Y を y$ にマップするかどうかで vi 使いは2種類に分かれる。</dd>
+<dt>ZZ (save-file-and-exit)</dt>
+<dd>ファイルを保存して終了。</dd>
+<dt>[[ (move-back-section)</dt>
+<dd>後方のセクションへ移動。</dd>
+<dt>]] (move-forward-section)</dt>
+<dd>前方のセクションへ移動。</dd>
+<dt>^ (move-to-first-non-blank)</dt>
+<dd>現在行の最初の非空白文字へ移動。$ はカウントを受け付け、3$ で 2 行下の最初の非空白文字へ移動するが、^ はカウントを受け付けない。対称性が破れている。
+しかし n 行上の非空白文字へ移動するためなら、 n- がある。<br>
+参照：<br>
+<ul>
+  <li><a href="http://d.hatena.ne.jp/parasporospa/20060816/1155735591">^ でカウント指定できるようにするハック</a><br>
+  <li><a href="http://www.vim.org/tips/tip.php?tip_id=315">Tip #315: "Smart &lt;home&gt;"</a>
+</ul>
+</dd>
+<dt>_ (move-to-first-non-blank)</dt>
+<dd>現在行の最初の非空白文字へ移動。^ との違いはカウントを受け付けるところと d,c,y と組み合わせたとき。</dd>
+<dt>` (move-to-mark)</dt>
+<dd>マークへ移動。</dd>
+<dt>{ (move-back-paragraph)</dt>
+<dd>後方のパラグラフへ移動。</dd>
+<dt>| (move-to-column)</dt>
+<dd>指定桁へ移動。</dd>
+<dt>} (move-forward-paragraph)</dt>
+<dd>前方のパラグラフへ移動。</dd>
+<dt>~ (change-case)</dt>
+<dd>大文字小文字を入れ替える。オペレータではないので、移動コマンドと組み合わせることはできない。</dd>
+<dt>^[ (exit-input-mode,cancel-partial-commands)</dt>
+<dd>インサートモードを抜ける。途中まで入力したコマンドをキャンセルする。多くの vi クローンでは C-c でもインサートモードを抜けることができる。また、多くの端末では C-3 でも ^[ を送信する。</dd>
+<dt>^] (tag-push-cursor-word)</dt>
+<dd>カーソル下の単語でタグジャンプ。</dd>
+<dt>^^ (switch-to-previous-file)</dt>
+<dd>前のファイルへ切り替える。</dd>
+<dt>&lt;space&gt; (move-right-by-columns)</dt>
+<dd>右へ移動。</dd>
+<dt>! (filter-through-commands-to-motion)</dt>
+<dd>移動位置まで外部コマンドでフィルタする。exコマンドの ! よりこちらの方がかっこいい。</dd>
+<dt>$ (move-to-last-column)</dt>
+<dd>行末へ移動。よく使う機能のわりに押しづらい。正規表現で行末を表すアトム $ からの連想だから仕方がないのか。</dd>
+<dt>% (move-to-match)</dt>
+<dd>対応する括弧へ移動。</dd>
+<dt>&amp; (repeat-substitution)</dt>
+<dd>前回の置換を繰り返す。</dd>
+<dt>' (move-to-mark)</dt>
+<dd>マークへ移動（行で最初の非空白文字）</dd>
+<dt>( (move-back-sentence)</dt>
+<dd>後方の文頭へ移動。</dd>
+<dt>) (move-forward-sentence)</dt>
+<dd>前方の文頭へ移動。</dd>
+<dt>+ (move-down-by-lines)</dt>
+<dd>下へ移動（行で最初の非空白文字）</dd>
+<dt>, (reverse-last-F-f-T-or-t search)</dt>
+<dd>F,f,T,tを繰り返す（逆方向）。よくマッピングのためにつぶされるキー。</dd>
+<dt>- (move-up-by-lines)</dt>
+<dd>上へ移動（行で最初の非空白文字）</dd>
+<dt>. (repeat-the-last-command)</dt>
+<dd>最後の変更を繰り返す。昔は vi にあって Emacs にない機能としてよく自慢されたらしい。津田氏の一番のお気に入りの機能。<br>
+参照：<a href="http://web.archive.org/web/20070105214811/http://vivi.dyndns.org/vivi/viq1.phtml">詰めvi問題1</a></dd>
+
+<dt>/ (search-forward)</dt>
+<dd>検索。正規表現検索なのがすばらしい。</dd>
+<dt>0 (move-to-first-character)</dt>
+<dd>1桁目へ移動。</dd>
+<dt>: (ex-command)</dt>
+<dd>ex コマンド。US キーボードではコロンを押すのにシフトキーが必要で面倒なため、mapで : と ; を入れ替える人もよくいる。なお、<a href="http://dailynewsagency.com/2012/03/11/here-is-why-vim-uses-the-hjkl-keys-as-arrow-keys/">Bill Joyが UCB で使っていたキーボード</a>では、コロンを入力するのにシフトは必要ない。</dd>
+<dt>; (repeat-last-F-f-T-or-t search)</dt>
+<dd>F,f,T,t を繰り返す。t/T の後ですぐに ; を使うと、現在のカーソル位置でマッチしてしまってそれ以上先へ進まないという興味深い特徴を持つ。</dd>
+<dt>&gt; (shift-lines-left-to-motion)</dt>
+<dd>インデントを増やす。</dd>
+<dt>&lt; (shift-lines-right-to-motion)</dt>
+<dd>インデントを減らす。</dd>
+<dt>? (search-backward)</dt>
+<dd>後方検索。</dd>
+<dt>@ (execute-buffer)</dt>
+<dd>バッファの中身をコマンドとして実行。このコマンドは意外に可能性を秘めている。<br>
+参照：<a href="http://d.hatena.ne.jp/parasporospa/20061210/p1">素の vi で superstar</a></dd>
+<dt>^B (scroll-up-by-screens)</dt>
+<dd>1画面上へスクロール。</dd>
+<dt>^C (interrupt-an-operation)</dt>
+<dd>操作を中断する（読み書き、検索など）</dd>
+<dt>^D (scroll-down-by-half-screens)</dt>
+<dd>半画面下へスクロール。スクロールならC-fがあるのに、本当にこんなものが必要だろうか？</dd>
+<dt>^E (scroll-down-by-lines)</dt>
+<dd>1行上へスクロール。</dd>
+<dt>^F (scroll-down-by-screens)</dt>
+<dd>1画面下へスクロール。</dd>
+<dt>^G (file-status)</dt>
+<dd>ファイルの情報を表示。本当に知りたい情報は表示してくれない。</dd>
+<dt>^H (move-left-by-characters)</dt>
+<dd>左へ移動。</dd>
+<dt>^J (move-down-by-lines)</dt>
+<dd>下へ移動。</dd>
+<dt>^L (redraw-screen)</dt>
+<dd>再描画。</dd>
+<dt>^M (move-down-by-lines)</dt>
+<dd>下へ移動（最初の非空白文字）。</dd>
+<dt>^N (move-down-by-lines)</dt>
+<dd>下へ移動。別にキーが空いてるからといって、同じ機能をいくつも割り当てなくていいのに。</dd>
+<dt>^P (move-up-by-lines)</dt>
+<dd>上へ移動。あれあれ？これは Emacs のリファレンスだっけ？</dd>
+<dt>^Q (input-a-literal-character)</dt>
+<dd>次に入力された文字をそのまま挿入する。</dd>
+<dt>^T (tag-pop)</dt>
+<dd>バックタグジャンプ。</dd>
+<dt>^U (half-page-up)</dt>
+<dd>半画面上へスクロール。実はC-uとC-dのスクロール量はオプション'scroll'で変更できる(nvi はこれに対応していない。nvi とオリジナル vi の数少ない非互換点の1つ)。</dd>
+<dt>^V (input-a-literal-character)</dt>
+<dd>次に入力された文字をそのまま挿入する。</dd>
+<dt>^Y (page-up-by-lines)</dt>
+<dd>1行下へスクロール。</dd>
+<dt>^Z (suspend-editor)</dt>
+<dd>サスペンド。なお、:shell では vi 内のカレントディレクトリからシェルが新規起動する。</dd>
+</dl>
+<p>
+<h2>参考</h2>
+<ol>
+<li>nvi :viusage
+<li>vim :help
+<li><a href="http://docs.freebsd.org/44doc/usd/12.vi/paper.html">An Introduction to Display Editing with Vi</a>
+
+</ol>
+</p>
+
+<hr>
+Last modified: 2018-04-29
+
+<address>AOYAMA Shotaro</address>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+BODY, TH, TD { font-family: 'ＭＳ ゴシック'; }
+
+
+.t {
+  border: none;
+  border-collapse: collapse;
+  margin: 0;
+}
+.t td,th {
+  border:none;
+  padding: 0px 5px 0px 5px;
+
+}
+
+.colorspan {
+  padding: 0px 5px 0px 5px;
+  width: 100px;
+}
+
+</style>
+<script type="text/javascript">
+  function b_onclick() {
+    var c = document.f1.fgcolor.value;
+    for (var i=0; i<256; i++) {
+      var o = document.getElementById("c" + i);
+      if (o != null) {
+        o.style.color = "#" + colors[c];
+      }
+      else {
+      alert("ERROR");
+      return;
+      }
+
+    }
+  }
+</script>
+</head>
+<body>
+
+<h3>iTerm2での実表示</h3>
+<a href="http://zhar.net/projects/shell/terminal-colors">terminal-colorsスクリプト</a>を使用<br>
+<img src="256colors.png">
+<br>
+
+<h3>RGB変換</h3>
+<form name="f1">
+  <input type="text" name="fgcolor" size="3" value="0" maxlength="3">
+  <input type="button" value="文字色セット" onclick="b_onclick()">
+</form>
+<br>
+<br>
+
+<script type="text/javascript">
+var colors = Array();
+colors[0] = '0';;
+colors[1] = '0';;
+colors[2] = '0';;
+colors[3] = '0';;
+colors[4] = '0';;
+colors[5] = '0';;
+colors[6] = '0';;
+colors[7] = '0';;
+colors[8] = '0';;
+colors[9] = '0';;
+colors[10] = '0';;
+colors[11] = '0';;
+colors[12] = '0';;
+colors[13] = '0';;
+colors[14] = '0';;
+colors[15] = '0';;
+colors[16] = '000000';;
+colors[17] = '00005f';;
+colors[18] = '000087';;
+colors[19] = '0000af';;
+colors[20] = '0000d7';;
+colors[21] = '0000ff';;
+colors[22] = '005f00';;
+colors[23] = '005f5f';;
+colors[24] = '005f87';;
+colors[25] = '005faf';;
+colors[26] = '005fd7';;
+colors[27] = '005fff';;
+colors[28] = '008700';;
+colors[29] = '00875f';;
+colors[30] = '008787';;
+colors[31] = '0087af';;
+colors[32] = '0087d7';;
+colors[33] = '0087ff';;
+colors[34] = '00af00';;
+colors[35] = '00af5f';;
+colors[36] = '00af87';;
+colors[37] = '00afaf';;
+colors[38] = '00afd7';;
+colors[39] = '00afff';;
+colors[40] = '00d700';;
+colors[41] = '00d75f';;
+colors[42] = '00d787';;
+colors[43] = '00d7af';;
+colors[44] = '00d7d7';;
+colors[45] = '00d7ff';;
+colors[46] = '00ff00';;
+colors[47] = '00ff5f';;
+colors[48] = '00ff87';;
+colors[49] = '00ffaf';;
+colors[50] = '00ffd7';;
+colors[51] = '00ffff';;
+colors[52] = '5f0000';;
+colors[53] = '5f005f';;
+colors[54] = '5f0087';;
+colors[55] = '5f00af';;
+colors[56] = '5f00d7';;
+colors[57] = '5f00ff';;
+colors[58] = '5f5f00';;
+colors[59] = '5f5f5f';;
+colors[60] = '5f5f87';;
+colors[61] = '5f5faf';;
+colors[62] = '5f5fd7';;
+colors[63] = '5f5fff';;
+colors[64] = '5f8700';;
+colors[65] = '5f875f';;
+colors[66] = '5f8787';;
+colors[67] = '5f87af';;
+colors[68] = '5f87d7';;
+colors[69] = '5f87ff';;
+colors[70] = '5faf00';;
+colors[71] = '5faf5f';;
+colors[72] = '5faf87';;
+colors[73] = '5fafaf';;
+colors[74] = '5fafd7';;
+colors[75] = '5fafff';;
+colors[76] = '5fd700';;
+colors[77] = '5fd75f';;
+colors[78] = '5fd787';;
+colors[79] = '5fd7af';;
+colors[80] = '5fd7d7';;
+colors[81] = '5fd7ff';;
+colors[82] = '5fff00';;
+colors[83] = '5fff5f';;
+colors[84] = '5fff87';;
+colors[85] = '5fffaf';;
+colors[86] = '5fffd7';;
+colors[87] = '5fffff';;
+colors[88] = '870000';;
+colors[89] = '87005f';;
+colors[90] = '870087';;
+colors[91] = '8700af';;
+colors[92] = '8700d7';;
+colors[93] = '8700ff';;
+colors[94] = '875f00';;
+colors[95] = '875f5f';;
+colors[96] = '875f87';;
+colors[97] = '875faf';;
+colors[98] = '875fd7';;
+colors[99] = '875fff';;
+colors[100] = '878700';;
+colors[101] = '87875f';;
+colors[102] = '878787';;
+colors[103] = '8787af';;
+colors[104] = '8787d7';;
+colors[105] = '8787ff';;
+colors[106] = '87af00';;
+colors[107] = '87af5f';;
+colors[108] = '87af87';;
+colors[109] = '87afaf';;
+colors[110] = '87afd7';;
+colors[111] = '87afff';;
+colors[112] = '87d700';;
+colors[113] = '87d75f';;
+colors[114] = '87d787';;
+colors[115] = '87d7af';;
+colors[116] = '87d7d7';;
+colors[117] = '87d7ff';;
+colors[118] = '87ff00';;
+colors[119] = '87ff5f';;
+colors[120] = '87ff87';;
+colors[121] = '87ffaf';;
+colors[122] = '87ffd7';;
+colors[123] = '87ffff';;
+colors[124] = 'af0000';;
+colors[125] = 'af005f';;
+colors[126] = 'af0087';;
+colors[127] = 'af00af';;
+colors[128] = 'af00d7';;
+colors[129] = 'af00ff';;
+colors[130] = 'af5f00';;
+colors[131] = 'af5f5f';;
+colors[132] = 'af5f87';;
+colors[133] = 'af5faf';;
+colors[134] = 'af5fd7';;
+colors[135] = 'af5fff';;
+colors[136] = 'af8700';;
+colors[137] = 'af875f';;
+colors[138] = 'af8787';;
+colors[139] = 'af87af';;
+colors[140] = 'af87d7';;
+colors[141] = 'af87ff';;
+colors[142] = 'afaf00';;
+colors[143] = 'afaf5f';;
+colors[144] = 'afaf87';;
+colors[145] = 'afafaf';;
+colors[146] = 'afafd7';;
+colors[147] = 'afafff';;
+colors[148] = 'afd700';;
+colors[149] = 'afd75f';;
+colors[150] = 'afd787';;
+colors[151] = 'afd7af';;
+colors[152] = 'afd7d7';;
+colors[153] = 'afd7ff';;
+colors[154] = 'afff00';;
+colors[155] = 'afff5f';;
+colors[156] = 'afff87';;
+colors[157] = 'afffaf';;
+colors[158] = 'afffd7';;
+colors[159] = 'afffff';;
+colors[160] = 'd70000';;
+colors[161] = 'd7005f';;
+colors[162] = 'd70087';;
+colors[163] = 'd700af';;
+colors[164] = 'd700d7';;
+colors[165] = 'd700ff';;
+colors[166] = 'd75f00';;
+colors[167] = 'd75f5f';;
+colors[168] = 'd75f87';;
+colors[169] = 'd75faf';;
+colors[170] = 'd75fd7';;
+colors[171] = 'd75fff';;
+colors[172] = 'd78700';;
+colors[173] = 'd7875f';;
+colors[174] = 'd78787';;
+colors[175] = 'd787af';;
+colors[176] = 'd787d7';;
+colors[177] = 'd787ff';;
+colors[178] = 'd7af00';;
+colors[179] = 'd7af5f';;
+colors[180] = 'd7af87';;
+colors[181] = 'd7afaf';;
+colors[182] = 'd7afd7';;
+colors[183] = 'd7afff';;
+colors[184] = 'd7d700';;
+colors[185] = 'd7d75f';;
+colors[186] = 'd7d787';;
+colors[187] = 'd7d7af';;
+colors[188] = 'd7d7d7';;
+colors[189] = 'd7d7ff';;
+colors[190] = 'd7ff00';;
+colors[191] = 'd7ff5f';;
+colors[192] = 'd7ff87';;
+colors[193] = 'd7ffaf';;
+colors[194] = 'd7ffd7';;
+colors[195] = 'd7ffff';;
+colors[196] = 'ff0000';;
+colors[197] = 'ff005f';;
+colors[198] = 'ff0087';;
+colors[199] = 'ff00af';;
+colors[200] = 'ff00d7';;
+colors[201] = 'ff00ff';;
+colors[202] = 'ff5f00';;
+colors[203] = 'ff5f5f';;
+colors[204] = 'ff5f87';;
+colors[205] = 'ff5faf';;
+colors[206] = 'ff5fd7';;
+colors[207] = 'ff5fff';;
+colors[208] = 'ff8700';;
+colors[209] = 'ff875f';;
+colors[210] = 'ff8787';;
+colors[211] = 'ff87af';;
+colors[212] = 'ff87d7';;
+colors[213] = 'ff87ff';;
+colors[214] = 'ffaf00';;
+colors[215] = 'ffaf5f';;
+colors[216] = 'ffaf87';;
+colors[217] = 'ffafaf';;
+colors[218] = 'ffafd7';;
+colors[219] = 'ffafff';;
+colors[220] = 'ffd700';;
+colors[221] = 'ffd75f';;
+colors[222] = 'ffd787';;
+colors[223] = 'ffd7af';;
+colors[224] = 'ffd7d7';;
+colors[225] = 'ffd7ff';;
+colors[226] = 'ffff00';;
+colors[227] = 'ffff5f';;
+colors[228] = 'ffff87';;
+colors[229] = 'ffffaf';;
+colors[230] = 'ffffd7';;
+colors[231] = 'ffffff';;
+colors[232] = '080808';;
+colors[233] = '121212';;
+colors[234] = '1c1c1c';;
+colors[235] = '262626';;
+colors[236] = '303030';;
+colors[237] = '3a3a3a';;
+colors[238] = '444444';;
+colors[239] = '4e4e4e';;
+colors[240] = '585858';;
+colors[241] = '626262';;
+colors[242] = '6c6c6c';;
+colors[243] = '767676';;
+colors[244] = '808080';;
+colors[245] = '8a8a8a';;
+colors[246] = '949494';;
+colors[247] = '9e9e9e';;
+colors[248] = 'a8a8a8';;
+colors[249] = 'b2b2b2';;
+colors[250] = 'bcbcbc';;
+colors[251] = 'c6c6c6';;
+colors[252] = 'd0d0d0';;
+colors[253] = 'dadada';;
+colors[254] = 'e4e4e4';;
+colors[255] = 'eeeeee';;
+</script>
+<table class='t'>
+<tr>
+<td><span id='c0' class='colorspan' style='background:#0'>Color0</span></td>
+<td><span id='c32' class='colorspan' style='background:#0087d7'>Color32</span></td>
+<td><span id='c64' class='colorspan' style='background:#5f8700'>Color64</span></td>
+<td><span id='c96' class='colorspan' style='background:#875f87'>Color96</span></td>
+<td><span id='c128' class='colorspan' style='background:#af00d7'>Color128</span></td>
+<td><span id='c160' class='colorspan' style='background:#d70000'>Color160</span></td>
+<td><span id='c192' class='colorspan' style='background:#d7ff87'>Color192</span></td>
+<td><span id='c224' class='colorspan' style='background:#ffd7d7'>Color224</span></td>
+</tr>
+<tr>
+<td><span id='c1' class='colorspan' style='background:#0'>Color1</span></td>
+<td><span id='c33' class='colorspan' style='background:#0087ff'>Color33</span></td>
+<td><span id='c65' class='colorspan' style='background:#5f875f'>Color65</span></td>
+<td><span id='c97' class='colorspan' style='background:#875faf'>Color97</span></td>
+<td><span id='c129' class='colorspan' style='background:#af00ff'>Color129</span></td>
+<td><span id='c161' class='colorspan' style='background:#d7005f'>Color161</span></td>
+<td><span id='c193' class='colorspan' style='background:#d7ffaf'>Color193</span></td>
+<td><span id='c225' class='colorspan' style='background:#ffd7ff'>Color225</span></td>
+</tr>
+<tr>
+<td><span id='c2' class='colorspan' style='background:#0'>Color2</span></td>
+<td><span id='c34' class='colorspan' style='background:#00af00'>Color34</span></td>
+<td><span id='c66' class='colorspan' style='background:#5f8787'>Color66</span></td>
+<td><span id='c98' class='colorspan' style='background:#875fd7'>Color98</span></td>
+<td><span id='c130' class='colorspan' style='background:#af5f00'>Color130</span></td>
+<td><span id='c162' class='colorspan' style='background:#d70087'>Color162</span></td>
+<td><span id='c194' class='colorspan' style='background:#d7ffd7'>Color194</span></td>
+<td><span id='c226' class='colorspan' style='background:#ffff00'>Color226</span></td>
+</tr>
+<tr>
+<td><span id='c3' class='colorspan' style='background:#0'>Color3</span></td>
+<td><span id='c35' class='colorspan' style='background:#00af5f'>Color35</span></td>
+<td><span id='c67' class='colorspan' style='background:#5f87af'>Color67</span></td>
+<td><span id='c99' class='colorspan' style='background:#875fff'>Color99</span></td>
+<td><span id='c131' class='colorspan' style='background:#af5f5f'>Color131</span></td>
+<td><span id='c163' class='colorspan' style='background:#d700af'>Color163</span></td>
+<td><span id='c195' class='colorspan' style='background:#d7ffff'>Color195</span></td>
+<td><span id='c227' class='colorspan' style='background:#ffff5f'>Color227</span></td>
+</tr>
+<tr>
+<td><span id='c4' class='colorspan' style='background:#0'>Color4</span></td>
+<td><span id='c36' class='colorspan' style='background:#00af87'>Color36</span></td>
+<td><span id='c68' class='colorspan' style='background:#5f87d7'>Color68</span></td>
+<td><span id='c100' class='colorspan' style='background:#878700'>Color100</span></td>
+<td><span id='c132' class='colorspan' style='background:#af5f87'>Color132</span></td>
+<td><span id='c164' class='colorspan' style='background:#d700d7'>Color164</span></td>
+<td><span id='c196' class='colorspan' style='background:#ff0000'>Color196</span></td>
+<td><span id='c228' class='colorspan' style='background:#ffff87'>Color228</span></td>
+</tr>
+<tr>
+<td><span id='c5' class='colorspan' style='background:#0'>Color5</span></td>
+<td><span id='c37' class='colorspan' style='background:#00afaf'>Color37</span></td>
+<td><span id='c69' class='colorspan' style='background:#5f87ff'>Color69</span></td>
+<td><span id='c101' class='colorspan' style='background:#87875f'>Color101</span></td>
+<td><span id='c133' class='colorspan' style='background:#af5faf'>Color133</span></td>
+<td><span id='c165' class='colorspan' style='background:#d700ff'>Color165</span></td>
+<td><span id='c197' class='colorspan' style='background:#ff005f'>Color197</span></td>
+<td><span id='c229' class='colorspan' style='background:#ffffaf'>Color229</span></td>
+</tr>
+<tr>
+<td><span id='c6' class='colorspan' style='background:#0'>Color6</span></td>
+<td><span id='c38' class='colorspan' style='background:#00afd7'>Color38</span></td>
+<td><span id='c70' class='colorspan' style='background:#5faf00'>Color70</span></td>
+<td><span id='c102' class='colorspan' style='background:#878787'>Color102</span></td>
+<td><span id='c134' class='colorspan' style='background:#af5fd7'>Color134</span></td>
+<td><span id='c166' class='colorspan' style='background:#d75f00'>Color166</span></td>
+<td><span id='c198' class='colorspan' style='background:#ff0087'>Color198</span></td>
+<td><span id='c230' class='colorspan' style='background:#ffffd7'>Color230</span></td>
+</tr>
+<tr>
+<td><span id='c7' class='colorspan' style='background:#0'>Color7</span></td>
+<td><span id='c39' class='colorspan' style='background:#00afff'>Color39</span></td>
+<td><span id='c71' class='colorspan' style='background:#5faf5f'>Color71</span></td>
+<td><span id='c103' class='colorspan' style='background:#8787af'>Color103</span></td>
+<td><span id='c135' class='colorspan' style='background:#af5fff'>Color135</span></td>
+<td><span id='c167' class='colorspan' style='background:#d75f5f'>Color167</span></td>
+<td><span id='c199' class='colorspan' style='background:#ff00af'>Color199</span></td>
+<td><span id='c231' class='colorspan' style='background:#ffffff'>Color231</span></td>
+</tr>
+<tr>
+<td><span id='c8' class='colorspan' style='background:#0'>Color8</span></td>
+<td><span id='c40' class='colorspan' style='background:#00d700'>Color40</span></td>
+<td><span id='c72' class='colorspan' style='background:#5faf87'>Color72</span></td>
+<td><span id='c104' class='colorspan' style='background:#8787d7'>Color104</span></td>
+<td><span id='c136' class='colorspan' style='background:#af8700'>Color136</span></td>
+<td><span id='c168' class='colorspan' style='background:#d75f87'>Color168</span></td>
+<td><span id='c200' class='colorspan' style='background:#ff00d7'>Color200</span></td>
+<td><span id='c232' class='colorspan' style='background:#080808'>Color232</span></td>
+</tr>
+<tr>
+<td><span id='c9' class='colorspan' style='background:#0'>Color9</span></td>
+<td><span id='c41' class='colorspan' style='background:#00d75f'>Color41</span></td>
+<td><span id='c73' class='colorspan' style='background:#5fafaf'>Color73</span></td>
+<td><span id='c105' class='colorspan' style='background:#8787ff'>Color105</span></td>
+<td><span id='c137' class='colorspan' style='background:#af875f'>Color137</span></td>
+<td><span id='c169' class='colorspan' style='background:#d75faf'>Color169</span></td>
+<td><span id='c201' class='colorspan' style='background:#ff00ff'>Color201</span></td>
+<td><span id='c233' class='colorspan' style='background:#121212'>Color233</span></td>
+</tr>
+<tr>
+<td><span id='c10' class='colorspan' style='background:#0'>Color10</span></td>
+<td><span id='c42' class='colorspan' style='background:#00d787'>Color42</span></td>
+<td><span id='c74' class='colorspan' style='background:#5fafd7'>Color74</span></td>
+<td><span id='c106' class='colorspan' style='background:#87af00'>Color106</span></td>
+<td><span id='c138' class='colorspan' style='background:#af8787'>Color138</span></td>
+<td><span id='c170' class='colorspan' style='background:#d75fd7'>Color170</span></td>
+<td><span id='c202' class='colorspan' style='background:#ff5f00'>Color202</span></td>
+<td><span id='c234' class='colorspan' style='background:#1c1c1c'>Color234</span></td>
+</tr>
+<tr>
+<td><span id='c11' class='colorspan' style='background:#0'>Color11</span></td>
+<td><span id='c43' class='colorspan' style='background:#00d7af'>Color43</span></td>
+<td><span id='c75' class='colorspan' style='background:#5fafff'>Color75</span></td>
+<td><span id='c107' class='colorspan' style='background:#87af5f'>Color107</span></td>
+<td><span id='c139' class='colorspan' style='background:#af87af'>Color139</span></td>
+<td><span id='c171' class='colorspan' style='background:#d75fff'>Color171</span></td>
+<td><span id='c203' class='colorspan' style='background:#ff5f5f'>Color203</span></td>
+<td><span id='c235' class='colorspan' style='background:#262626'>Color235</span></td>
+</tr>
+<tr>
+<td><span id='c12' class='colorspan' style='background:#0'>Color12</span></td>
+<td><span id='c44' class='colorspan' style='background:#00d7d7'>Color44</span></td>
+<td><span id='c76' class='colorspan' style='background:#5fd700'>Color76</span></td>
+<td><span id='c108' class='colorspan' style='background:#87af87'>Color108</span></td>
+<td><span id='c140' class='colorspan' style='background:#af87d7'>Color140</span></td>
+<td><span id='c172' class='colorspan' style='background:#d78700'>Color172</span></td>
+<td><span id='c204' class='colorspan' style='background:#ff5f87'>Color204</span></td>
+<td><span id='c236' class='colorspan' style='background:#303030'>Color236</span></td>
+</tr>
+<tr>
+<td><span id='c13' class='colorspan' style='background:#0'>Color13</span></td>
+<td><span id='c45' class='colorspan' style='background:#00d7ff'>Color45</span></td>
+<td><span id='c77' class='colorspan' style='background:#5fd75f'>Color77</span></td>
+<td><span id='c109' class='colorspan' style='background:#87afaf'>Color109</span></td>
+<td><span id='c141' class='colorspan' style='background:#af87ff'>Color141</span></td>
+<td><span id='c173' class='colorspan' style='background:#d7875f'>Color173</span></td>
+<td><span id='c205' class='colorspan' style='background:#ff5faf'>Color205</span></td>
+<td><span id='c237' class='colorspan' style='background:#3a3a3a'>Color237</span></td>
+</tr>
+<tr>
+<td><span id='c14' class='colorspan' style='background:#0'>Color14</span></td>
+<td><span id='c46' class='colorspan' style='background:#00ff00'>Color46</span></td>
+<td><span id='c78' class='colorspan' style='background:#5fd787'>Color78</span></td>
+<td><span id='c110' class='colorspan' style='background:#87afd7'>Color110</span></td>
+<td><span id='c142' class='colorspan' style='background:#afaf00'>Color142</span></td>
+<td><span id='c174' class='colorspan' style='background:#d78787'>Color174</span></td>
+<td><span id='c206' class='colorspan' style='background:#ff5fd7'>Color206</span></td>
+<td><span id='c238' class='colorspan' style='background:#444444'>Color238</span></td>
+</tr>
+<tr>
+<td><span id='c15' class='colorspan' style='background:#0'>Color15</span></td>
+<td><span id='c47' class='colorspan' style='background:#00ff5f'>Color47</span></td>
+<td><span id='c79' class='colorspan' style='background:#5fd7af'>Color79</span></td>
+<td><span id='c111' class='colorspan' style='background:#87afff'>Color111</span></td>
+<td><span id='c143' class='colorspan' style='background:#afaf5f'>Color143</span></td>
+<td><span id='c175' class='colorspan' style='background:#d787af'>Color175</span></td>
+<td><span id='c207' class='colorspan' style='background:#ff5fff'>Color207</span></td>
+<td><span id='c239' class='colorspan' style='background:#4e4e4e'>Color239</span></td>
+</tr>
+<tr>
+<td><span id='c16' class='colorspan' style='background:#000000'>Color16</span></td>
+<td><span id='c48' class='colorspan' style='background:#00ff87'>Color48</span></td>
+<td><span id='c80' class='colorspan' style='background:#5fd7d7'>Color80</span></td>
+<td><span id='c112' class='colorspan' style='background:#87d700'>Color112</span></td>
+<td><span id='c144' class='colorspan' style='background:#afaf87'>Color144</span></td>
+<td><span id='c176' class='colorspan' style='background:#d787d7'>Color176</span></td>
+<td><span id='c208' class='colorspan' style='background:#ff8700'>Color208</span></td>
+<td><span id='c240' class='colorspan' style='background:#585858'>Color240</span></td>
+</tr>
+<tr>
+<td><span id='c17' class='colorspan' style='background:#00005f'>Color17</span></td>
+<td><span id='c49' class='colorspan' style='background:#00ffaf'>Color49</span></td>
+<td><span id='c81' class='colorspan' style='background:#5fd7ff'>Color81</span></td>
+<td><span id='c113' class='colorspan' style='background:#87d75f'>Color113</span></td>
+<td><span id='c145' class='colorspan' style='background:#afafaf'>Color145</span></td>
+<td><span id='c177' class='colorspan' style='background:#d787ff'>Color177</span></td>
+<td><span id='c209' class='colorspan' style='background:#ff875f'>Color209</span></td>
+<td><span id='c241' class='colorspan' style='background:#626262'>Color241</span></td>
+</tr>
+<tr>
+<td><span id='c18' class='colorspan' style='background:#000087'>Color18</span></td>
+<td><span id='c50' class='colorspan' style='background:#00ffd7'>Color50</span></td>
+<td><span id='c82' class='colorspan' style='background:#5fff00'>Color82</span></td>
+<td><span id='c114' class='colorspan' style='background:#87d787'>Color114</span></td>
+<td><span id='c146' class='colorspan' style='background:#afafd7'>Color146</span></td>
+<td><span id='c178' class='colorspan' style='background:#d7af00'>Color178</span></td>
+<td><span id='c210' class='colorspan' style='background:#ff8787'>Color210</span></td>
+<td><span id='c242' class='colorspan' style='background:#6c6c6c'>Color242</span></td>
+</tr>
+<tr>
+<td><span id='c19' class='colorspan' style='background:#0000af'>Color19</span></td>
+<td><span id='c51' class='colorspan' style='background:#00ffff'>Color51</span></td>
+<td><span id='c83' class='colorspan' style='background:#5fff5f'>Color83</span></td>
+<td><span id='c115' class='colorspan' style='background:#87d7af'>Color115</span></td>
+<td><span id='c147' class='colorspan' style='background:#afafff'>Color147</span></td>
+<td><span id='c179' class='colorspan' style='background:#d7af5f'>Color179</span></td>
+<td><span id='c211' class='colorspan' style='background:#ff87af'>Color211</span></td>
+<td><span id='c243' class='colorspan' style='background:#767676'>Color243</span></td>
+</tr>
+<tr>
+<td><span id='c20' class='colorspan' style='background:#0000d7'>Color20</span></td>
+<td><span id='c52' class='colorspan' style='background:#5f0000'>Color52</span></td>
+<td><span id='c84' class='colorspan' style='background:#5fff87'>Color84</span></td>
+<td><span id='c116' class='colorspan' style='background:#87d7d7'>Color116</span></td>
+<td><span id='c148' class='colorspan' style='background:#afd700'>Color148</span></td>
+<td><span id='c180' class='colorspan' style='background:#d7af87'>Color180</span></td>
+<td><span id='c212' class='colorspan' style='background:#ff87d7'>Color212</span></td>
+<td><span id='c244' class='colorspan' style='background:#808080'>Color244</span></td>
+</tr>
+<tr>
+<td><span id='c21' class='colorspan' style='background:#0000ff'>Color21</span></td>
+<td><span id='c53' class='colorspan' style='background:#5f005f'>Color53</span></td>
+<td><span id='c85' class='colorspan' style='background:#5fffaf'>Color85</span></td>
+<td><span id='c117' class='colorspan' style='background:#87d7ff'>Color117</span></td>
+<td><span id='c149' class='colorspan' style='background:#afd75f'>Color149</span></td>
+<td><span id='c181' class='colorspan' style='background:#d7afaf'>Color181</span></td>
+<td><span id='c213' class='colorspan' style='background:#ff87ff'>Color213</span></td>
+<td><span id='c245' class='colorspan' style='background:#8a8a8a'>Color245</span></td>
+</tr>
+<tr>
+<td><span id='c22' class='colorspan' style='background:#005f00'>Color22</span></td>
+<td><span id='c54' class='colorspan' style='background:#5f0087'>Color54</span></td>
+<td><span id='c86' class='colorspan' style='background:#5fffd7'>Color86</span></td>
+<td><span id='c118' class='colorspan' style='background:#87ff00'>Color118</span></td>
+<td><span id='c150' class='colorspan' style='background:#afd787'>Color150</span></td>
+<td><span id='c182' class='colorspan' style='background:#d7afd7'>Color182</span></td>
+<td><span id='c214' class='colorspan' style='background:#ffaf00'>Color214</span></td>
+<td><span id='c246' class='colorspan' style='background:#949494'>Color246</span></td>
+</tr>
+<tr>
+<td><span id='c23' class='colorspan' style='background:#005f5f'>Color23</span></td>
+<td><span id='c55' class='colorspan' style='background:#5f00af'>Color55</span></td>
+<td><span id='c87' class='colorspan' style='background:#5fffff'>Color87</span></td>
+<td><span id='c119' class='colorspan' style='background:#87ff5f'>Color119</span></td>
+<td><span id='c151' class='colorspan' style='background:#afd7af'>Color151</span></td>
+<td><span id='c183' class='colorspan' style='background:#d7afff'>Color183</span></td>
+<td><span id='c215' class='colorspan' style='background:#ffaf5f'>Color215</span></td>
+<td><span id='c247' class='colorspan' style='background:#9e9e9e'>Color247</span></td>
+</tr>
+<tr>
+<td><span id='c24' class='colorspan' style='background:#005f87'>Color24</span></td>
+<td><span id='c56' class='colorspan' style='background:#5f00d7'>Color56</span></td>
+<td><span id='c88' class='colorspan' style='background:#870000'>Color88</span></td>
+<td><span id='c120' class='colorspan' style='background:#87ff87'>Color120</span></td>
+<td><span id='c152' class='colorspan' style='background:#afd7d7'>Color152</span></td>
+<td><span id='c184' class='colorspan' style='background:#d7d700'>Color184</span></td>
+<td><span id='c216' class='colorspan' style='background:#ffaf87'>Color216</span></td>
+<td><span id='c248' class='colorspan' style='background:#a8a8a8'>Color248</span></td>
+</tr>
+<tr>
+<td><span id='c25' class='colorspan' style='background:#005faf'>Color25</span></td>
+<td><span id='c57' class='colorspan' style='background:#5f00ff'>Color57</span></td>
+<td><span id='c89' class='colorspan' style='background:#87005f'>Color89</span></td>
+<td><span id='c121' class='colorspan' style='background:#87ffaf'>Color121</span></td>
+<td><span id='c153' class='colorspan' style='background:#afd7ff'>Color153</span></td>
+<td><span id='c185' class='colorspan' style='background:#d7d75f'>Color185</span></td>
+<td><span id='c217' class='colorspan' style='background:#ffafaf'>Color217</span></td>
+<td><span id='c249' class='colorspan' style='background:#b2b2b2'>Color249</span></td>
+</tr>
+<tr>
+<td><span id='c26' class='colorspan' style='background:#005fd7'>Color26</span></td>
+<td><span id='c58' class='colorspan' style='background:#5f5f00'>Color58</span></td>
+<td><span id='c90' class='colorspan' style='background:#870087'>Color90</span></td>
+<td><span id='c122' class='colorspan' style='background:#87ffd7'>Color122</span></td>
+<td><span id='c154' class='colorspan' style='background:#afff00'>Color154</span></td>
+<td><span id='c186' class='colorspan' style='background:#d7d787'>Color186</span></td>
+<td><span id='c218' class='colorspan' style='background:#ffafd7'>Color218</span></td>
+<td><span id='c250' class='colorspan' style='background:#bcbcbc'>Color250</span></td>
+</tr>
+<tr>
+<td><span id='c27' class='colorspan' style='background:#005fff'>Color27</span></td>
+<td><span id='c59' class='colorspan' style='background:#5f5f5f'>Color59</span></td>
+<td><span id='c91' class='colorspan' style='background:#8700af'>Color91</span></td>
+<td><span id='c123' class='colorspan' style='background:#87ffff'>Color123</span></td>
+<td><span id='c155' class='colorspan' style='background:#afff5f'>Color155</span></td>
+<td><span id='c187' class='colorspan' style='background:#d7d7af'>Color187</span></td>
+<td><span id='c219' class='colorspan' style='background:#ffafff'>Color219</span></td>
+<td><span id='c251' class='colorspan' style='background:#c6c6c6'>Color251</span></td>
+</tr>
+<tr>
+<td><span id='c28' class='colorspan' style='background:#008700'>Color28</span></td>
+<td><span id='c60' class='colorspan' style='background:#5f5f87'>Color60</span></td>
+<td><span id='c92' class='colorspan' style='background:#8700d7'>Color92</span></td>
+<td><span id='c124' class='colorspan' style='background:#af0000'>Color124</span></td>
+<td><span id='c156' class='colorspan' style='background:#afff87'>Color156</span></td>
+<td><span id='c188' class='colorspan' style='background:#d7d7d7'>Color188</span></td>
+<td><span id='c220' class='colorspan' style='background:#ffd700'>Color220</span></td>
+<td><span id='c252' class='colorspan' style='background:#d0d0d0'>Color252</span></td>
+</tr>
+<tr>
+<td><span id='c29' class='colorspan' style='background:#00875f'>Color29</span></td>
+<td><span id='c61' class='colorspan' style='background:#5f5faf'>Color61</span></td>
+<td><span id='c93' class='colorspan' style='background:#8700ff'>Color93</span></td>
+<td><span id='c125' class='colorspan' style='background:#af005f'>Color125</span></td>
+<td><span id='c157' class='colorspan' style='background:#afffaf'>Color157</span></td>
+<td><span id='c189' class='colorspan' style='background:#d7d7ff'>Color189</span></td>
+<td><span id='c221' class='colorspan' style='background:#ffd75f'>Color221</span></td>
+<td><span id='c253' class='colorspan' style='background:#dadada'>Color253</span></td>
+</tr>
+<tr>
+<td><span id='c30' class='colorspan' style='background:#008787'>Color30</span></td>
+<td><span id='c62' class='colorspan' style='background:#5f5fd7'>Color62</span></td>
+<td><span id='c94' class='colorspan' style='background:#875f00'>Color94</span></td>
+<td><span id='c126' class='colorspan' style='background:#af0087'>Color126</span></td>
+<td><span id='c158' class='colorspan' style='background:#afffd7'>Color158</span></td>
+<td><span id='c190' class='colorspan' style='background:#d7ff00'>Color190</span></td>
+<td><span id='c222' class='colorspan' style='background:#ffd787'>Color222</span></td>
+<td><span id='c254' class='colorspan' style='background:#e4e4e4'>Color254</span></td>
+</tr>
+<tr>
+<td><span id='c31' class='colorspan' style='background:#0087af'>Color31</span></td>
+<td><span id='c63' class='colorspan' style='background:#5f5fff'>Color63</span></td>
+<td><span id='c95' class='colorspan' style='background:#875f5f'>Color95</span></td>
+<td><span id='c127' class='colorspan' style='background:#af00af'>Color127</span></td>
+<td><span id='c159' class='colorspan' style='background:#afffff'>Color159</span></td>
+<td><span id='c191' class='colorspan' style='background:#d7ff5f'>Color191</span></td>
+<td><span id='c223' class='colorspan' style='background:#ffd7af'>Color223</span></td>
+<td><span id='c255' class='colorspan' style='background:#eeeeee'>Color255</span></td>
+</tr>
+</table>
+</body>
+</html>

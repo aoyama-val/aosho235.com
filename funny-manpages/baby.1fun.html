@@ -1,0 +1,162 @@
+<HTML><HEAD><TITLE>Manpage of BABY</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>BABY</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+baby --- create new process from two parents
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>baby</B>
+
+<B>-sex</B>
+
+[<I>m</I>|<I>f</I>]
+
+[<B>-name</B>
+
+<I>name</I>]
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<I>baby</I>
+
+is initiated when one parent process polls another server process
+through a socket connection in the BSD version
+or through pipes in the System V implementation.
+<I>baby</I>
+
+runs at low priority for approximately forty weeks
+and then terminates with a heavy system load.
+Most systems require constant monitoring when
+<I>baby</I>
+
+reaches its final stages of execution.
+<P>
+
+Older implementations of
+<I>baby</I>
+
+did not require both initiating processes to
+be present at the time of completion.
+In those
+versions the initiating process
+which was not present was
+awakened and notified of the results upon completion.
+It has since been determined that the presence of both parent
+processes result in a generally lower system load at completion,
+and thus current versions of
+<I>baby</I>
+
+expect both parent processes to be active during the final stages.
+<P>
+
+Successful completion of
+<I>baby</I>
+
+results in the creation and
+naming of a new process.
+Parent processes then broadcast
+messages to all other processes, local and remote, informing
+them of their new status.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-sex</B>
+
+<DD>
+define the gender of the created process
+<DT><B>-name</B>
+
+<DD>
+assign the name name to the new process
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLES</H2>
+
+<DL COMPACT><DT><DD>
+baby -sex f -name Jacqueline
+</DL>
+
+<P>
+
+completed successfully on July 9, 1992 at 9:11pm.
+Jacqueline's vital statistics: 8 pounds 3 oz, 20 inches, long dark hair.
+The parent process, Kim Dunbar, is reportedly doing fine.
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?6+cigar">cigar</A></I>(6),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?5+dump">dump</A></I>(5),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?3+cry">cry</A></I>(3).
+
+<A NAME="lbAH">&nbsp;</A>
+<H2>BUGS</H2>
+
+Despite its complexity,
+<I>baby</I>
+
+only knows one signal, SIGCHLD,
+(or SIGCLD in the System V implementation),
+which it uses to contact the parent processes.
+One or both parent processes must then inspect the baby process
+to determine the cause of the signal.
+<P>
+
+The
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+sleep">sleep</A></I>(1)
+
+command may not work as expected on either parent
+process for some time afterward, as each new instance of
+<I>baby</I>
+
+sends intermittent signals to the parent processes
+which must be handled by the parents immediately.
+<P>
+
+A
+<I>baby</I>
+
+process will frequently dump core, requiring either
+or both parent processes to clean up after it.
+<P>
+
+Despite the reams of available documentation on invoking and
+maintaining
+<I>baby</I>,
+
+most parent processes are overwhelmed.
+<A NAME="lbAI">&nbsp;</A>
+<H2>AUTHORS</H2>
+
+From a man page by Joe Beck, &lt;beck@cs.ualberta.ca&gt;.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLES</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DT><A HREF="#lbAH">BUGS</A><DD>
+<DT><A HREF="#lbAI">AUTHORS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

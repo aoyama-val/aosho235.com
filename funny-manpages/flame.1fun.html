@@ -1,0 +1,268 @@
+<HTML><HEAD><TITLE>Manpage of FLAME</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>FLAME</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+flame --- reply to Usenet News posting automatically
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>flame</B>
+
+[<I>options</I>]
+
+[<I>filename</I>]
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Flame is a AI tool providing an automated method
+for replying to articles posted to Usenet News.
+Special care is paid to allow the user to specify
+the type of reply he desires.
+The following options are supported by flame:
+<DL COMPACT>
+<DT><B>--</B>
+
+<DD>
+Take input from stdin.
+<DT><B>-x</B><I> regexp</I>
+
+<DD>
+Crosspost to all newsgroups matching
+<I>regexp</I>.
+
+<DT><B>-n</B><I> number</I>
+
+<DD>
+Post this reply
+<I>number</I>
+
+times.
+<DT><B>-b</B>
+
+<DD>
+Reply in BIFF MODE.
+<DT><B>-d</B>
+
+<DD>
+Delay response until original posting expires.
+<DT><B>-m</B>
+
+<DD>
+Misdirect to a random Author.
+<DT><B>-r</B>
+
+<DD>
+ROT13 quotes from original posting.
+<DT><B>-g</B><I> regexp</I>
+
+<DD>
+Reply to all messages in newsgroups matching
+<I>regexp</I>.
+
+<DT><B>-A</B>
+
+<DD>
+Call the Author Assh*le in 12 languages.
+<DT><B>-B</B>
+
+<DD>
+Bait the Author.
+<DT><B>-C</B>
+
+<DD>
+Accuse the Author of communist leanings.
+<DT><B>-D</B>
+
+<DD>
+Denigrate the Author.
+<DT><B>-E</B>
+
+<DD>
+Picks apart the Author's educational background.
+<DT><B>-F</B>
+
+<DD>
+Accuse the Author of fascist leanings.
+<DT><B>-G</B>
+
+<DD>
+Post using Greek insult module.
+<DT><B>-H</B>
+
+<DD>
+Accuse the Author of homophobic leanings.
+<DT><B>-I</B>
+
+<DD>
+Question the Author's intelligence.
+<DT><B>-J</B>
+
+<DD>
+Accuse the Author of purchasing Japanese imports.
+<DT><B>-K</B>
+
+<DD>
+Accuse the Author of working
+for the KGB, MOSSAD, CIA, or MI5 as appropriate.
+<DT><B>-L</B>
+
+<DD>
+Post using Latin insult module.
+<DT><B>-M</B>
+
+<DD>
+Insult the Author's mother.
+<DT><B>-N</B>
+
+<DD>
+Accuse the Author of Neo-Nazi leanings.
+<DT><B>-O</B>
+
+<DD>
+Quote obscure references proving falsehood of the posting.
+<DT><B>-P</B>
+
+<DD>
+Question the Author's parentage.
+<DT><B>-Q</B>
+
+<DD>
+Accuse the Author of deviant sexual practices.
+<DT><B>-R</B>
+
+<DD>
+Accuse the Author of racist leaning.
+<DT><B>-S</B>
+
+<DD>
+Accuse the Author of sexist leanings.
+<DT><B>-T</B>
+
+<DD>
+Accuse the Author of cross dressing.
+<DT><B>-U</B>
+
+<DD>
+State that the Author just doesn't understand anything.
+<DT><B>-V</B>
+
+<DD>
+Pretend sympathy for Author's virgin sensibilities.
+<DT><B>-W</B>
+
+<DD>
+Accuse the Author of voting for George Bush.
+<DT><B>-X</B>
+
+<DD>
+Prepend obscene adjectives wherever syntactically correct.
+<DT><B>-Y</B>
+
+<DD>
+Accuse the Author of PLO membership.
+<DT><B>-Z</B>
+
+<DD>
+Accuse the Author of Zionist leanings.
+</DL>
+<A NAME="lbAE">&nbsp;</A>
+<H2>ENVIRONMENT</H2>
+
+The environment variable FLAME_TYPE can be set
+to any combination of the above parameters,
+and will be used as the default flame type to generate.
+<P>
+
+The environment variable OBSCENE points to a file containing
+miscellaneous obscene adjectives for the
+<B>-X</B>
+
+option above.
+<A NAME="lbAF">&nbsp;</A>
+<H2>MACROS</H2>
+
+Macro Support will be added to the next release of
+<I>flame</I>.
+
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Unknown
+<A NAME="lbAH">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT>.lastflame<DD>
+This file contains the number of the last article flamed.
+Used when
+<I>flame</I>ing
+
+an entire newsgroup.
+<DT>.prefflame<DD>
+This file contains the user's preferred flames.
+<DT>.altflame<DD>
+This file contains alternate phrasing
+of some of the more standard flames.
+Used to keep the program from flaming itself.
+</DL>
+<A NAME="lbAI">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+rn">rn</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+more">more</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?5+newsrc">newsrc</A></I>(5),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+readnews">readnews</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+Pnews">Pnews</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+Rnmail">Rnmail</A></I>(1)
+
+<A NAME="lbAJ">&nbsp;</A>
+<H2>DIAGNOSTICS</H2>
+
+Self Documenting.
+<A NAME="lbAK">&nbsp;</A>
+<H2>BUGS</H2>
+
+Occasionally,
+<I>flame</I>
+
+will turn on the user,
+and flame all outgoing postings.
+When this happens, the best thing to do reinstall your
+news software and
+<I>flame</I>.
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">ENVIRONMENT</A><DD>
+<DT><A HREF="#lbAF">MACROS</A><DD>
+<DT><A HREF="#lbAG">AUTHOR</A><DD>
+<DT><A HREF="#lbAH">FILES</A><DD>
+<DT><A HREF="#lbAI">SEE ALSO</A><DD>
+<DT><A HREF="#lbAJ">DIAGNOSTICS</A><DD>
+<DT><A HREF="#lbAK">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

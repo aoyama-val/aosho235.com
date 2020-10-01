@@ -1,0 +1,228 @@
+<HTML><HEAD><TITLE>Manpage of PARTY</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>PARTY</H1>
+Section: User Commands  (1)<BR>Updated: Aug 18, 1997<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+party - set OS responses mode
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>party ON|OFF|WHEREIS [ - ] dnv</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Operating  systems  being  what they are,  the admin people can
+easily  grow tired of  command responses that resemble dyslexic
+eugene-speak   filtered   through   Kernighan   and   Ritchie's
+collective  back-brains.  To alleviate this, we have included a
+slightly  more  `casual'  mode,  in  which the responses to all
+commands  are  first filtered  through  a  customising  routine
+<B>(DUDE)</B>
+
+, which  makes them  sound a little more  friendly while retaining
+their  full  information   content  (usually).   The rooted(c)
+system prompt is  changed to  `What now,  dude?' and output from
+each command is terminated by `No problem, dude.'
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-v</B>
+
+<DD>
+Verbose mode  (ALL commands  have  a `verbose' mode). When  this  option
+is  present,  all filtered responses are  preceeded  by a message:
+`This response has been parsed by the
+<B>DUDE</B>
+
+filter and is not intended to be some sort of sleazy come-on.'
+<DT><B>-d</B>
+
+<DD>
+Don't  restart  all  processes  after  recompiling the
+<B>/uselss/libs/eugene</B>
+
+file (see below).   This alows any important tasks to complete beforehand.
+<DT><B>-n</B>
+
+<DD>
+Notify  all  users  that  they  are about to be force-logged out and
+force-logged in again.
+<DT><B>ON</B>
+
+<DD>
+Activates the
+<B>DUDE</B>
+
+filter.
+<DT><B>OFF</B>
+
+<DD>
+De-activates the
+<B>DUDE</B>
+
+filter.
+<DT><B>WHEREIS</B>
+
+<DD>
+Doesn't do anything, but we couldn't resist it.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLES</H2>
+
+
+%-)  party on
+<P>
+What now, dude?
+<P>
+
+To compare  the differing responses, here is output provided by the
+ispi -s command, with party OFF and party ON:
+<P>
+party OFF
+<P>
+
+line     who       why                         how long
+<BR>
+
+==========================================================
+<BR>
+
+000      rooted    that's you, dweeb!          epoch
+<BR>
+
+----------------------------------------------------------
+<BR>
+
+00F      wp        she's supposed to be        0:44:12
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;typing&nbsp;up&nbsp;the&nbsp;end&nbsp;of
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financial&nbsp;year&nbsp;report,
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;she's&nbsp;been&nbsp;doing&nbsp;her
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resume&nbsp;when&nbsp;she&nbsp;thinks
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no-one&nbsp;is&nbsp;watching
+<BR>
+
+----------------------------------------------------------
+<BR>
+
+014      maint     playing games, as usual     0:51:16
+
+<P>
+<P>
+party ON
+<P>
+
+Well,  let's see who's on, eh?  There's you, of course, on line 000
+(Imagine that!  Hahaha!)  Oh look,  on serIOus line 00F,  it's that
+cute little secretary - looks like she's lost her keyboard template
+again, she's been hitting the escape key for the past five minutes!
+AND  OF  COURSE, the  guys  down in maintenance are playing `cosmic
+ballcrushers'.   As  usual.   Well,  who  else,  um,  no-one really
+interesting like,  ya know, oh hang on,  DTR is toggling on serIOus
+line 03D.. oh, no problem, it's that stuffed modem again.  You want
+maybe I should send  some AMail to maintenance  and get 'em to look
+at it?   No problem, dude.
+<P>
+What now, dude?
+
+<A NAME="lbAG">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT><B>/uselss/libs/bill&amp;ted/DUDE</B>
+
+<DD>
+<PRE>
+This  is  the pipe process,  usually
+started  at system shoe,  which lies
+idle until party ON is issued.
+</PRE>
+
+<DT><B>/uselss/libs/eugene</B>
+
+<DD>
+<PRE>
+Contains all of the ordinary, ho-hum
+confusing   computer   -   jargonese
+responses  which commands ordinarily
+issue.  Text file.
+</PRE>
+
+<DT><B>/uselss/libs/eugene.spoo</B>
+
+<DD>
+<PRE>
+compiled version of the eugene file.
+</PRE>
+
+<DT><B>/ephemeral/eugene.chex</B>
+
+<DD>
+<PRE>
+Checksum  for  the  compiled  eugene file.
+</PRE>
+
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+crp">crp</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+stuffio">stuffio</A></I>(2),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?9+doobrie">doobrie</A></I>(9),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?3+gouge">gouge</A></I>(3),
+
+<I>ftang</I>(65534),
+
+<I>wi</I>(-1),
+
+<I>edmond</I>(29),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?2+jumpstart">jumpstart</A></I>(2),
+
+<I>vo_mit</I>(992)
+
+<A NAME="lbAI">&nbsp;</A>
+<H2>BUGS</H2>
+
+The
+<B>-n</B>
+
+option can be slow.
+<P>
+If  the n option is issued,  some users in a wi editing session
+may not  receive the  `warning, restart imminent' message until
+after the restart.
+<P>
+There is no way selectively to follow symbolic links.
+<P>
+Sunburne Computer, Inc. 9 October 1991
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLES</A><DD>
+<DT><A HREF="#lbAG">FILES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DT><A HREF="#lbAI">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

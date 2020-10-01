@@ -1,0 +1,244 @@
+<HTML><HEAD><TITLE>Manpage of DATE</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>DATE</H1>
+Section: Games and Demos (6)<BR>Updated: January 1, 1992<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+date - get and print a date
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>date</B>
+
+[<B>-s</B>]
+
+[<B>-local</B>]
+
+[<B>-k</B>]
+
+[<B>-blind</B>]
+
+<I>option</I>=<I>value</I>...
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+If no arguments are given, a date will be selected at random.
+Providing an argument will restrict the search pool of dates.
+Hopefully these arguments will not carry forward into the actual date.
+Only the superuser can select dates by name.
+<P>
+
+The
+<B>-s</B>
+
+option registers you in the date database and (if not
+<B>-local</B>)
+
+posts your vitals to alt.personals (and, optionally, alt.sex.wanted).
+<P>
+
+Using the
+<B>-k</B>
+
+option selects a date, but does not make any further arrangments.
+<P>
+
+Ranges are specified with parentheses and brackets: (18,25) is 18 to 25
+exclusive while [18,25] is 18 to 25 inclusive.
+An array of selections is given with braces
+such as ``{blonde, brunette, redhead}''.
+Multiple responses are separated with commas,
+as in ``sex=female,yes,please''.
+<DL COMPACT>
+<DT><B>-blind</B>
+
+<DD>
+To arrange a blind date.
+</DL>
+<P>
+
+<B>view</B>[=<I>must</I>]
+
+
+<DL COMPACT>
+<DT><DD>
+
+View prospective date's picture.
+To locate a picture,
+<I>date</I>
+
+searches several picture databases, including FaceSaver (uunet.uu.net)
+alt.sec.pictures, alt.binaries.pictures.erotica,
+and several FTP gif archives.
+You must have access to the Internet for FTP to work.
+<DT><DD>
+If view=must is set, and
+<I>date</I>
+
+is unable to find a picture, a request will be automaticly posted to
+alt.binaries.pictures.d asking for one.
+<DT><DD>
+Options to
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+xv">xv</A></I>(1)
+
+may follow &quot;view&quot; or be put in the environment parameter XV.
+</DL>
+<P>
+
+The following options restrict the search pool
+to those who have supplied the necessary information.
+<DL COMPACT>
+<DT><B>dim=</B><I>range,range,range</I>
+
+<DD>
+<DT><B>height=</B><I>range</I>
+
+<DD>
+Synonyms are also supported: midget, twerp, short, beanstalk,
+giant, basketball-player
+<DT><B>weight=</B><I>range</I>
+
+<DD>
+Synonyms: toothpic, feather, wide-load, blimp
+<DT><B>age=</B><I>range</I>
+
+<DD>
+Synonyms: juvenile, underage, thirty-nine, over-the-hill, {mom, dad},
+{grandma, grandpa}
+</DL>
+<P>
+
+<B>sex=</B>{male, female}[,{yes, no, maybe}][,<I>opt</I>=<I><A HREF="http://localhost/cgi-bin/man/man2html?6+sex">sex</A></I>(6) options]
+
+
+<DL COMPACT>
+<DT><DD>
+
+If sex=yes and you are registering,
+your vitals are posted to alt.sex.wanted
+in addition to alt.personals.
+<DT><B>race=</B>{white, black, native-american, ...}
+
+<DD>
+Various slang terms are also supported.
+<DT><B>marriage=</B>{flirting, noway, maybe, once, twice, several}
+
+<DD>
+Seriousness and experience.
+</DL>
+<P>
+
+<B>kids=</B>{never, rightaway, oops, have, want}[,{one, two, three, four, bunch}]
+
+<DL COMPACT>
+<DT><DD>
+
+Domestic leanings.
+<DT><B>cooking=</B>{never, loveit, when_hungry}
+
+<DD>
+<DT><B>color</B>
+
+<DD>
+Synonym for race.
+<DT><B>religion=</B>{Atheist, Moslem, Lutheran, Catholic, ...}
+
+<DD>
+<DT><B>temper=</B>{mellow, quiet, hot-head}
+
+<DD>
+</DL>
+<P>
+
+<B>interests=</B>{<I>lists of possible interests</I>}
+
+<P>
+
+<B>name=</B><I>lastname</I>,<I>firstname</I>
+
+
+<DL COMPACT>
+<DT><DD>
+
+Specify name of your date.
+Perfect for hitting on.
+Names can only be specified by super-user.
+</DL>
+<A NAME="lbAE">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT>$HOME/.daterc<DD>
+Optional place to store options, for frequent daters.
+<DT>$HOME/.datehist<DD>
+History of dates, to avoid duplication.
+<DT>$HOME/.persona<DD>
+Options describing yourself, if you haven't registered in the database.
+Note that the first time you use
+<I>date</I>
+
+and supply this information,
+you are registered in the blind-date database.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+man">man</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+woman">woman</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?6+sex">sex</A></I>(6)
+
+<P>
+
+<I>RFC1036: Standard for exchange of USENET messages</I>,
+
+M. Horton and R. Adams.
+<P>
+
+<I>A Primer on how to work with the USENET community</I>,
+
+Chuq Von Rospach and Gene ``net.god'' Spafford.
+<A NAME="lbAG">&nbsp;</A>
+<H2>DIAGNOSTICS</H2>
+
+Exit status is 0 on success, 1 on complete failure to get a date.
+<P>
+
+``You are not superuser: date not set''
+if you try to use the name parameter
+but are not the super-user.
+<P>
+
+``Vitals posted to alt.personals [,alt.sex.wanted]''
+when you register globally.
+<A NAME="lbAH">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Won't admit to it!
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">FILES</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+<DT><A HREF="#lbAG">DIAGNOSTICS</A><DD>
+<DT><A HREF="#lbAH">AUTHOR</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

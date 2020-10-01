@@ -1,0 +1,188 @@
+<HTML><HEAD><TITLE>Manpage of XKILL</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>XKILL</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+xkill - extended kill - kill processes or users, including Usenet posters.
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>xkill</B>
+
+[<B>-signal</B>]
+
+<I>pid</I>
+
+...
+<BR>
+
+<B>xkill -l</B>
+
+<BR>
+
+<B>xkill</B>
+
+<I>username</I>[<I>@host</I>]
+
+...
+<BR>
+
+<B>xkill</B>
+
+<B>-u</B>
+
+[<B>-qs</B>]
+
+[<B>-p</B>]
+
+[<I>newsgroup</I>]
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<I>xkill</I>
+
+sends a signal to a process or a terminal.
+The first two forms send a signal to a process.
+The functionality in this case is the same as
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+kill">kill</A></I>(1).
+
+<P>
+
+When the command
+<I>xkill</I>
+
+is invoked with an username as argument,
+it attempts to locate the specified user on the local host.
+If the user is logged on,
+the signal ECUTE (electrocute, 666) is sent to the user's terminal.
+This will cause the keyboard to electrocute the user.
+If the user is not logged on,
+the appropriate line of the file
+<I>/etc/passwd</I>
+
+is marked.
+The first time the user logs on the ECUTE signal is
+sent to the terminal he is using.
+<P>
+
+When the command
+<I>xkill</I>
+
+is invoked with a remote username,
+in the form
+<I>user@host</I>,
+
+a connection with the remote host is attempted (see
+<I><A HREF="http://localhost/cgi-bin/man/man2html?8+xkilld">xkilld</A></I>(8)),
+
+to send the ECUTE signal to the user's terminal.
+<A NAME="lbAE">&nbsp;</A>
+<H2>USENET KILL</H2>
+
+The
+<B>-u</B>
+
+(Usenet) option is an extension of the concept of KILL file.
+<P>
+
+The program will attempt to locate a remote user by scanning
+the news spool area.
+When the user is located,
+a connection is attempted with the appropriate host,
+and the ECUTE (electrocute, 666) signal is sent to the appropriate user.
+The search only considers one newsgroup.
+If none is specified,
+<I>rec.humor</I>
+
+is assumed by default.
+The program attempts to locate people whose signature is too long,
+and who quote a whole article in order to comment on a single line.
+The option
+<B>-s</B>
+
+can be used to consider only the size of signatures,
+while the option
+<B>-q</B>
+
+can be used to consider only the size of the quotations.
+The option
+<B>-qs</B>
+
+corresponds to the default.
+<P>
+
+When the
+<B>-p</B>
+
+(post) switch is used,
+the user is electrocuted next time he post news.
+<A NAME="lbAF">&nbsp;</A>
+<H2>FILES</H2>
+
+<DL COMPACT>
+<DT>/etc/passwd<DD>
+to keep track of users marked for electrocution
+<DT>/etc/hosts<DD>
+list of remote hosts
+<DT>/usr/spool/news<DD>
+news spool directory;
+the news articles are stored here
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+kill">kill</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1c+telnet">telnet</A></I>(1c),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?8+xkilld">xkilld</A></I>(8)
+
+<A NAME="lbAH">&nbsp;</A>
+<H2>BUGS</H2>
+
+To kill a remote user,
+it is sometimes better to use the command
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1c+telnet">telnet</A></I>(1c)
+
+using the standard
+<I>xkilld</I>
+
+port (number 666).
+When the connection is attempted by
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+xkill">xkill</A></I>(1)
+
+some gateways will explode after the user is electrocuted.
+<P>
+
+To decide what is a quotation,
+and what is a signature,
+a very complicated pattern matching is used.
+This does not always work,
+even if the program hasn't yet electrocuted
+somebody who is not guilty of bandwidth waste.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">USENET KILL</A><DD>
+<DT><A HREF="#lbAF">FILES</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DT><A HREF="#lbAH">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

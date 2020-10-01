@@ -1,0 +1,209 @@
+# $Id: vipad.mayu,v 1.3 2005/05/23 16:00:56 ao Exp $
+
+# To enable this setting:
+# put the following two lines to your .mayu
+# window Notepad /notepad\.exe:Notepad:Edit/ : Vipad
+# include "vipad.mayu"
+
+
+# vi binding for notepad ****************************************
+
+keyseq $vi-forward-char            = Right
+keyseq $vi-backward-char           = Left
+
+keyseq $vi-select-word             = C-S-Right
+keyseq $vi-beginning-of-word       = C-Left
+keyseq $vi-forward-word            = C-Right
+keyseq $vi-backward-word           = C-Left
+
+keyseq $vi-beginning-of-line       = Home
+keyseq $vi-end-of-line             = End
+keyseq $vi-next-line               = Down
+keyseq $vi-previous-line           = Up
+
+keyseq $vi-beginning-of-buffer     = C-Home
+keyseq $vi-end-of-buffer           = C-End
+
+keyseq $vi-delete-char             = Del
+keyseq $vi-kill-char               = S-Right S-Del
+keyseq $vi-backward-delete-char    = S-Left S-Del
+
+keyseq $vi-kill-line               = S-End S-Del
+keyseq $vi-select-whole-line       = Home S-Down
+keyseq $vi-kill-whole-line         = $vi-select-whole-line S-Del
+
+keyseq $vi-insert-mode             = &Toggle(Lock0 off) &HelpMessage(Mayu, "-- INSERT --")
+keyseq $vi-normal-mode             = &Toggle(Lock0 on) &HelpMessage()
+keyseq $vi-newline                 = Enter
+
+keyseq $vi-search-forward          = C-f
+keyseq $vi-search-backward         = C-f &Wait(500) A-u A-n
+keyseq $vi-search-next             = F3
+keyseq $vi-search-previous         = S-F3
+
+keyseq $vi-delete                  = Del
+keyseq $vi-kill                    = C-x
+keyseq $vi-yank                    = C-c
+keyseq $vi-put                     = C-v
+keyseq $vi-deselect                = Right Left
+
+keyseq $vi-undo                    = C-z
+keyseq $vi-redo                    = C-y
+
+keyseq $vi-scroll-up               = Pageup
+keyseq $vi-scroll-down             = Pagedown
+
+keyseq $vi-open-manual             = F1
+keyseq $visual-mode                = &Toggle(Lock1 on)
+keyseq $exit-visual-mode           = &Toggle(Lock1 off)
+
+
+# two or more stroke keys *****************************************
+
+keymap2 Vipad-g
+ key L0-G = $vi-beginning-of-buffer
+
+keymap2 Vipad-dg
+ key L0-G = C-S-Home $vi-kill
+
+keymap2 Vipad-d
+ key L0-d = $vi-kill-whole-line
+ key L0-g = &Prefix(Vipad-dg)
+ key L0-w = $vi-select-word $vi-kill
+ key L0-b = C-S-Left $vi-kill
+ key L0-e = C-S-Right $vi-kill
+ key L0-S-G = C-S-End   $vi-kill
+ key L0-_0 = S-Home $vi-kill
+ key L0-S-_4 = S-End $vi-kill
+
+keymap2 Vipad-c
+ key L0-c = $vi-select-whole-line $vi-kill $vi-backward-char $vi-newline $vi-insert-mode
+ key L0-w = $vi-select-word $vi-kill 
+ key L0-b = C-S-Left $vi-kill 
+ key L0-e = C-S-Right $vi-kill 
+ key L0-S-G = C-S-End   $vi-kill 
+ key L0-_0 = S-Home $vi-kill 
+ key L0-S-_4 = S-End $vi-kill 
+
+keymap2 VipadY
+ key L0-y = $vi-select-whole-line $vi-yank $vi-deselect Up
+ key L0-S-_0 = S-Home $vi-yank $vi-deselect
+ key L0-w = $vi-select-word $vi-yank $vi-deselect
+ key L0-b = C-S-Left $vi-yank $vi-deselect
+ key L0-e = C-S-Right $vi-yank $vi-deselect
+ key L0-S-G = C-S-End $vi-yank $vi-deselect
+ key L0-_0 = S-Home $vi-yank $vi-deselect
+ key L0-S-_4 = S-End $vi-yank $vi-deselect
+
+keymap2 Vipad-v
+ key L0-S-*G = S-*End
+ key L0-L1-S-_4 = S-End
+ key L0-L1-_0 = S-Home 
+
+
+# main **********************************************************
+
+keymap Vipad : Global
+key Esc = $vi-normal-mode
+
+# normal mode
+key L0-S-_4 = $vi-end-of-line
+key L0-_0 = $vi-beginning-of-line 
+key L0-Caret = $vi-beginning-of-line
+key L0-Slash = $vi-search-forward
+key L0-S-Slash = $vi-search-backward
+
+key L0-a = $vi-forward-char $vi-insert-mode
+key L0-b = $vi-backward-word
+key L0-c = &Prefix(Vipad-c)
+key L0-d = &Prefix(Vipad-d)
+key L0-e = $vi-forward-word $vi-backward-char
+key L0-f = &Undefined
+key L0-g = &Prefix(Vipad-g)
+key L0-h = $vi-backward-char
+key L0-i = $vi-insert-mode
+key L0-j = $vi-next-line
+key L0-k = $vi-previous-line
+key L0-l = $vi-forward-char
+key L0-m = &Undefined
+key L0-n = $vi-search-next
+key L0-o = $vi-end-of-line $vi-newline $vi-insert-mode
+key L0-p = $vi-put
+key L0-q = &Undefined
+key L0-r = S-Right $vi-insert-mode
+key L0-s = &Undefined
+key L0-t = &Undefined
+key L0-u = $vi-undo
+key L0-v = $visual-mode &Prefix(Vipad-v)
+key L0-w = $vi-forward-word
+key L0-x = $vi-kill-char
+key L0-y = &Prefix(VipadY)
+key L0-z = &Undefined
+
+key L0-S-A = $vi-end-of-line $vi-insert-mode
+key L0-S-B = $vi-backward-word
+key L0-S-C = $vi-kill-line $vi-insert-mode
+key L0-S-D = $vi-kill-line
+key L0-S-E = $vi-forward-word $vi-backward-char
+key L0-S-F = &Undefined
+key L0-S-G = $vi-end-of-buffer
+key L0-S-H = &Undefined
+key L0-S-I = $vi-beginning-of-line $vi-insert-mode
+key L0-S-J = $vi-end-of-line $vi-delete-char
+key L0-S-K = $vi-open-manual
+key L0-S-L = &Undefined
+key L0-S-M = &Undefined
+key L0-S-N = $vi-search-previous
+key L0-S-O = $vi-previous-line $vi-end-of-line $vi-newline $vi-insert-mode
+key L0-S-P = $vi-backward-char $vi-put
+key L0-S-Q = &Undefined
+key L0-S-R = &Undefined
+key L0-S-S = $vi-kill-whole-line $vi-newline $vi-previous-line $vi-insert-mode
+key L0-S-T = &Undefined
+key L0-S-U = &Undefined
+key L0-S-V = $vi-select-whole-line
+key L0-S-W = $vi-forward-word
+key L0-S-X = $vi-backward-delete-char
+key L0-S-Y = $vi-select-whole-line $vi-yank
+key L0-S-Z = &Undefined
+
+key L0-C-a = &Undefined
+key L0-C-b = $vi-scroll-up
+key L0-C-c = &Undefined
+key L0-C-d = $vi-scroll-down
+key L0-C-e = &Undefined
+key L0-C-f = $vi-scroll-down
+key L0-C-g = &Undefined
+key L0-C-h = $vi-backward-char
+key L0-C-i = &Undefined
+key L0-C-j = $vi-next-line
+key L0-C-k = &Undefined
+key L0-C-l = &Undefined
+key L0-C-m = $vi-next-line
+key L0-C-n = $vi-next-line
+key L0-C-o = &Undefined
+key L0-C-p = $vi-previous-line
+key L0-C-q = &Undefined
+key L0-C-r = $vi-redo
+key L0-C-s = &Undefined
+key L0-C-t = &Undefined
+key L0-C-u = $vi-scroll-up
+key L0-C-v = $vi-select-whole-line $visual-mode
+key L0-C-w = &Undefined
+key L0-C-x = &Undefined
+key L0-C-y = &Undefined
+key L0-C-z = &WindowMinimize
+
+
+# visual mode ***************************************************
+key L1-d = $vi-kill $exit-visual-mode
+key L1-c = $vi-kill $exit-visual-mode $vi-insert-mode
+key L1-h = S-*Left
+key L1-j = S-*Down
+key L1-k = S-*Up
+key L1-l = S-*Right
+key L1-v   = $exit-visual-mode
+key L1-ESC = $exit-visual-mode
+
+# end ***********************************************************
+

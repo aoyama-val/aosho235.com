@@ -1,0 +1,109 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>screenのエスケープシーケンス</title>
+</head>
+
+<table>
+<h1>screen</h1>
+<tr><td>図形文字セットの組 - def=vt100</td><td>ac</td><td>++,,--..00``aaffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~</td></tr>
+<tr><td>別の文字セットを有効にする</td><td>eA</td><td>\E(B\E)0</td></tr>
+<tr><td>初期化文字列</td><td>is</td><td>\E)0</td></tr>
+<tr><td>現在のカーソル位置を保存 (P)</td><td>sc</td><td>\E7</td></tr>
+<tr><td>save_cursor の最後の位置へカーソルを戻す</td><td>rc</td><td>\E8</td></tr>
+<tr><td>改行 (cr の後に lf が来たように振舞います)</td><td>nw</td><td>\EE</td></tr>
+<tr><td>全ての行において今いる桁にタブを設定</td><td>st</td><td>\EH</td></tr>
+<tr><td>テキストを下にスクロール (P)</td><td>sr</td><td>\EM</td></tr>
+<tr><td>1 行上に移動</td><td>up</td><td>\EM</td></tr>
+<tr><td>up-arrow キー</td><td>ku</td><td>\EOA</td></tr>
+<tr><td>down-arrow キー</td><td>kd</td><td>\EOB</td></tr>
+<tr><td>right-arrow キー</td><td>kr</td><td>\EOC</td></tr>
+<tr><td>left-arrow キー</td><td>kl</td><td>\EOD</td></tr>
+<tr><td>F1 ファンクションキー</td><td>k1</td><td>\EOP</td></tr>
+<tr><td>F2 ファンクションキー</td><td>k2</td><td>\EOQ</td></tr>
+<tr><td>F3 ファンクションキー</td><td>k3</td><td>\EOR</td></tr>
+<tr><td>F4 ファンクションキー</td><td>k4</td><td>\EOS</td></tr>
+<tr><td>#1 文字を挿入 (P*)</td><td>IC</td><td>\E[%d@</td></tr>
+<tr><td>#1 行上に移動 (P*)</td><td>UP</td><td>\E[%dA</td></tr>
+<tr><td>#1 行下に移動 (P*)</td><td>DO</td><td>\E[%dB</td></tr>
+<tr><td>#1 文字右に移動 (P*)</td><td>RI</td><td>\E[%dC</td></tr>
+<tr><td>#1 文字左に移動 (P)</td><td>LE</td><td>\E[%dD</td></tr>
+<tr><td>#1 行を挿入 (P*)</td><td>AL</td><td>\E[%dL</td></tr>
+<tr><td>#1 行を削除 (P*)</td><td>DL</td><td>\E[%dM</td></tr>
+<tr><td>#1 文字を削除 (P*)</td><td>DC</td><td>\E[%dP</td></tr>
+<tr><td>行 #1 桁 #2 に移動</td><td>cm</td><td>\E[%i%d;%dH</td></tr>
+<tr><td>領域を行 #1 から行 #2 までに変更 (P)</td><td>cs</td><td>\E[%i%d;%dr</td></tr>
+<tr><td>全属性をオフ</td><td>me</td><td>\E[0m</td></tr>
+<tr><td>F5 ファンクションキー</td><td>k5</td><td>\E[15~</td></tr>
+<tr><td>F6 ファンクションキー</td><td>k6</td><td>\E[17~</td></tr>
+<tr><td>F7 ファンクションキー</td><td>k7</td><td>\E[18~</td></tr>
+<tr><td>F8 ファンクションキー</td><td>k8</td><td>\E[19~</td></tr>
+<tr><td>行頭までクリア</td><td>cb</td><td>\E[1K</td></tr>
+<tr><td>ボールド (さらに明るい) モードオン</td><td>md</td><td>\E[1m</td></tr>
+<tr><td>home キー</td><td>kh</td><td>\E[1~</td></tr>
+<tr><td>F9 ファンクションキー</td><td>k9</td><td>\E[20~</td></tr>
+<tr><td>F10 ファンクションキー</td><td>k;</td><td>\E[21~</td></tr>
+<tr><td>強調表示モードから抜ける</td><td>se</td><td>\E[23m</td></tr>
+<tr><td>F11 ファンクションキー</td><td>F1</td><td>\E[23~</td></tr>
+<tr><td>下線モードから抜ける</td><td>ue</td><td>\E[24m</td></tr>
+<tr><td>F12 ファンクションキー</td><td>F2</td><td>\E[24~</td></tr>
+<tr><td>insert-character キー</td><td>kI</td><td>\E[2~</td></tr>
+<tr><td>通常のカーソル表示にする(cursor_invisible/cursor_visible の無効化)</td><td>ve</td><td>\E[34h\E[?25h</td></tr>
+<tr><td>カーソルを非常に見易くする</td><td>vs</td><td>\E[34l</td></tr>
+<tr><td>全タブストップをクリア (P)</td><td>ct</td><td>\E[3g</td></tr>
+<tr><td>強調表示モード開始</td><td>so</td><td>\E[3m</td></tr>
+<tr><td>delete-character キー</td><td>kD</td><td>\E[3~</td></tr>
+<tr><td>挿入モードへ入る</td><td>im</td><td>\E[4h</td></tr>
+<tr><td>挿入モードから抜ける</td><td>ei</td><td>\E[4l</td></tr>
+<tr><td>下線モード開始</td><td>us</td><td>\E[4m</td></tr>
+<tr><td>end キー</td><td>@7</td><td>\E[4~</td></tr>
+<tr><td>点滅オン</td><td>mb</td><td>\E[5m</td></tr>
+<tr><td>prev-page キー</td><td>kP</td><td>\E[5~</td></tr>
+<tr><td>next-page キー</td><td>kN</td><td>\E[6~</td></tr>
+<tr><td>反転表示モードオン</td><td>mr</td><td>\E[7m</td></tr>
+<tr><td>cursor_address を使用するプログラムを開始する文字列</td><td>ti</td><td>\E[?1049h</td></tr>
+<tr><td>cup 使用のプログラムを終了する文字列</td><td>te</td><td>\E[?1049l</td></tr>
+<tr><td>’キーボード送出’ モードに入る</td><td>ks</td><td>\E[?1h\E=</td></tr>
+<tr><td>’キーボード送出’ モードから抜ける</td><td>ke</td><td>\E[?1l\E></td></tr>
+<tr><td>カーソルを見えなくする</td><td>vi</td><td>\E[?25l</td></tr>
+<tr><td>1 つ右に移動</td><td>nd</td><td>\E[C</td></tr>
+<tr><td>カーソルをホームに移動</td><td>ho</td><td>\E[H</td></tr>
+<tr><td>画面を消去しカーソルをホームに移動 (P*)</td><td>cl</td><td>\E[H\E[J</td></tr>
+<tr><td>画面末までクリア (P*)</td><td>cd</td><td>\E[J</td></tr>
+<tr><td>行末までクリア (P)</td><td>ce</td><td>\E[K</td></tr>
+<tr><td>行挿入 (P*)</td><td>al</td><td>\E[L</td></tr>
+<tr><td>マウスイベントが発生した</td><td>Km</td><td>\E[M</td></tr>
+<tr><td>行削除 (P*)</td><td>dl</td><td>\E[M</td></tr>
+<tr><td>文字削除 (P*)</td><td>dc</td><td>\E[P</td></tr>
+<tr><td>後退タブ (P)</td><td>bt</td><td>\E[Z</td></tr>
+<tr><td>back-tab キー</td><td>kB</td><td>\E[Z</td></tr>
+<tr><td>端末リセット文字</td><td>rs</td><td>\Ec\E[?1000l\E[?25h</td></tr>
+<tr><td>可視ベル (カーソルは移動しません)</td><td>vb</td><td>\Eg</td></tr>
+<tr><td>可聴シグナル (ベル) (P)</td><td>bl</td><td>^G</td></tr>
+<tr><td>backspace キー</td><td>kb</td><td>^H</td></tr>
+<tr><td>1 つ左に移動</td><td>le</td><td>^H</td></tr>
+<tr><td>次の 8 スペースハードウェアタブストップへタブ</td><td>ta</td><td>^I</td></tr>
+<tr><td>1 行下に移動</td><td>do</td><td>^J</td></tr>
+<tr><td>テキストを上にスクロール (P)</td><td>sf</td><td>^J</td></tr>
+<tr><td>キャリッジリターン (P*)</td><td>cr</td><td>^M</td></tr>
+<tr><td>別の文字セット開始 (P)</td><td>as</td><td>^N</td></tr>
+<tr><td>別の文字セット終了 (P)</td><td>ae</td><td>^O</td></tr>
+<tr><td>tc</td><td>tc</td><td>ecma+color</td></tr>
+<tr><td>端末は自動マージンを持つ</td><td>am</td><td>オン</td></tr>
+<tr><td>左に移動するために ^H を使用</td><td>bs</td><td>オン</td></tr>
+<tr><td>メタキーを持ち、最上位ビットをセットする</td><td>km</td><td>オン</td></tr>
+<tr><td>挿入モードでの移動が安全</td><td>mi</td><td>オン</td></tr>
+<tr><td>強調表示モードでの移動が安全</td><td>ms</td><td>オン</td></tr>
+<tr><td>^I で起動される 8 文字タブがある</td><td>pt</td><td>オン</td></tr>
+<tr><td>80 桁より後の改行は無視される (concept)</td><td>xn</td><td>オン</td></tr>
+<tr><td>Co#8</td><td>Co#8</td><td>オン</td></tr>
+<tr><td>co#80</td><td>co#80</td><td>オン</td></tr>
+<tr><td>it#8</td><td>it#8</td><td>オン</td></tr>
+<tr><td>li#24</td><td>li#24</td><td>オン</td></tr>
+<tr><td>pa#64</td><td>pa#64</td><td>オン</td></tr>
+</table>
+
+                </body>
+                </html>
+                

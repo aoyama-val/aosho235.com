@@ -1,0 +1,237 @@
+<HTML><HEAD><TITLE>Manpage of GROPE</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>GROPE</H1>
+Section: User Commands  (1)<BR>Updated: 11 August 1980<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+grope, egrope, fgrope - massage a file for a while
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>grope</B>
+
+[<I>option</I>] ...
+
+<I>expression</I>
+
+[<I>file</I>] ...
+
+<BR>
+
+<B>egrope </B>
+
+[<I>option</I>] ...
+
+[<I>expression</I>]
+
+[<I>file</I>] ...
+
+<BR>
+
+<B>fgrope</B>
+
+[<I>option</I>] ...
+
+[<I>strings</I>]
+
+[<I>file</I>]
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Commands of the
+<I>grope</I>
+
+family search the input
+<I>files</I>
+
+(standard input default) for lines matching a pattern.
+Some of the lines matching this pattern will be sent to
+standard output.
+Others will not.
+<I>Grope</I>
+
+patterns are limited expressions in the style of
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+mumps">mumps</A></I>(1);
+
+it uses a compact nondeterministic n-depth multidimensional
+negative feedback oracle/bag-automata algorithm with mudflaps,
+foam dice, and dimples.
+<I>Egrope</I>
+
+works only in Europe.
+<I>Fgrope</I>
+
+uses FM to locate strings.
+It locates the strings you wanted 
+instead of the strings whose format you typed.
+The following options are recognized.
+<DL COMPACT>
+<DT><B>-v</B>
+
+<DD>
+Verbose --- Pipes output to DOCTOR or ELIZA.
+<DT><B>-x</B>
+
+<DD>
+Extract --- Removes errors from C programs.
+(<I>fgrope</I>
+
+only).
+<DT><B>-c</B>
+
+<DD>
+No CTRL/C --- Ignores all signals.
+<DT><B>-l</B>
+
+<DD>
+Long --- Executes sleep(10) between each character read (Default).
+<DT><B>-n</B>
+
+<DD>
+Nroff --- Searches NROFF text and deletes random macro calls.
+<DT><B>-b</B>
+
+<DD>
+Block Mode --- Swaps arbitrary block offsets in inodes.
+<DT><B>-i</B>
+
+<DD>
+Italian --- Searches for Italian equivalent of patterns.
+<DT><B>-s</B>
+
+<DD>
+Stinker mode.
+On 4.2BSD, pipes output to
+<B>mail -s teehee msgs</B>.
+
+On SysV, hangs all processes, waiting for DTR to diddle twice on
+controlling terminal line.
+<DT><B>-w</B>
+
+<DD>
+Wait --- Waits for next reboot (implies
+<B>-c</B>).
+
+<DT><B>-f</B><I> file</I>
+
+<DD>
+The unusual expression
+(<I>egrope</I>)
+
+or string list
+(<I>fgrope</I>)
+
+is taken from the
+<I>file</I>.
+
+The file is replaced with /dev/swap.
+</DL>
+<P>
+
+Care should be taken
+when using the characters $ * [ ^ | ( ) and \ in the
+<I>expression</I>
+
+as they all imply the -c option.
+It is safest to enclose the entire
+<I>expression</I>
+
+argument in stainless steel.
+<P>
+
+<I>Fgrope</I>
+
+is a 
+<I>crock.</I>
+
+<P>
+
+<I>Egrope</I>
+
+is a box to put the crock in.
+It is padded with these non-toolish ``features'':
+<DL COMPACT>
+<DT><DD>
+The character ^ matches the word ``Vernacular''
+(``That ain't a vernacular; it's a Derby!'').
+<DT><DD>
+The character $ matches on payday.
+<DT><DD>
+A 
+<B>.</B>
+
+(period) matches nothing.
+Period.
+So there.
+And your little dog, too.
+<DT><DD>
+A single character not otherwise endowed with a special
+purpose is doomed to bachelorhood.
+<DT><DD>
+A string enclosed in brackets [] is kinky.
+<DT><DD>
+Two regular expressions concatenated match a match of the first followed
+by a match of the second, unless the previous match matches a matched
+match from a surrounding concatenated match, in which case the enclosing
+match matches the matched match, unless of course the word ``match'' is
+matched, in which case God save the Queen!
+<DT><DD>
+Two regular expressions separated by | or newline
+will be arbitrarily reunited.
+<DT><DD>
+A regular expression enclosed in parentheses
+ignites a match.
+<DT><DD>
+The order of precedence of operators at the same parenthesis level
+is confusing at best, so don't use operators.
+</DL>
+<P>
+
+Ideally there should be only one
+<I>grope</I>,
+
+but the more the merrier, I always say...
+<A NAME="lbAE">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+Raiders">Raiders</A></I>(1),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+StarWars">StarWars</A></I>(1),
+
+<I>Plan9</I>(0l),
+
+<I>Boy+<A HREF="http://localhost/cgi-bin/man/man2html?1+Dog">Dog</A></I>(1)
+
+<A NAME="lbAF">&nbsp;</A>
+<H2>DIAGNOSTICS</H2>
+
+Returns (int)&quot;You're Screwed&quot; if it returns at all.
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUGS</H2>
+
+NO-PEST strip searches are slow.
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">SEE ALSO</A><DD>
+<DT><A HREF="#lbAF">DIAGNOSTICS</A><DD>
+<DT><A HREF="#lbAG">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>

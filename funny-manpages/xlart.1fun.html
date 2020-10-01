@@ -1,0 +1,153 @@
+<HTML><HEAD><TITLE>Manpage of xLart</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</HEAD><BODY>
+<H1>xLart</H1>
+Section: User Commands  (1)<BR>Updated: Aug 17, 1997<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+xLart - interactive X interface to
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+rlart">rlart</A></I>(1)
+
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>xLart</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>xLart </B>
+
+is an interactive X11-based interface to the 
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+rlart">rlart</A></I>(1)
+
+off-line lart spooler. 
+<B>xLart </B>
+
+uses the lartd - if lartd is not running when 
+<B>xLart </B>
+
+is started, 
+<B>xLart </B>
+
+will start it and send an autolart to the members of wheel (not including
+root). 
+<B>xLart </B>
+
+utilises xfaces and Drag-and-Drop to allow playing admins to either 
+drag lusers onto larts or vice versa. Points are accrued for each 
+successful lart deployment, and scores written to 
+<B>/var/account/lart/interactive.</B>
+
+<P>
+<B>xLart </B>
+
+makes use of several basic larts, and as more points are
+accrued (or as the lusers become harder to lart) other, more
+capable larts are made available. The basic larts are:
+<P>
+<PRE>
+                        Filleting knife
+                        10lb Sledgehammer
+                        Garrotte
+                        Beretta 9mm
+                        un-set concrete
+                        tommy gun
+</PRE>
+
+<P>
+Of course, since 
+<B>xlart </B>
+
+is only distributed in source form, site-dependent larts may be designed, 
+implemented and used by the relevant BOFH or sysmangler.
+<P>
+The highest level of play also allows for the use of the atomic
+lart (lat and long must be specified, but some help is given by
+the program) and the psychological lart (old-style lobotomy,
+Electro-convulsive shock therapy, extreme aversion therapy and
+drug cocktails). The psychological lart needs to be used over
+several rounds, due to its non-instantaneous nature.
+<P>
+The vanilla installation of 
+<B>xLart </B>
+
+requires a configuration file list of larts to be added at certain 
+point intervals. A slightly more interesting installation makes 
+use of the xface library to provide that personal touch when larting 
+lusers. The most interesting variant of 
+<B>xLart </B>
+
+is to not only use xfaces but also to describe a building layout 
+(similar to loderunner) with levels and interior descriptions. 
+This variant allows several admins/BOFHen to play simultaneously, 
+competing against each other to see how many lusers they can lart 
+in a given time period (say until local police units arrive) or before
+ammunition runs out.
+<A NAME="lbAE">&nbsp;</A>
+<H2>FILES</H2>
+
+<P>
+<B>/etc/lartcap </B>
+
+<PRE>
+                                        - lart capability database 
+</PRE>
+
+<B>/var/lib/lart/lusers/xface.&lt;lusername&gt;</B>
+
+<PRE>
+                                        - xface for lusername 
+</PRE>
+
+<B>/var/lib/lart/larts/&lt;lartname&gt;.ppm</B>
+
+<PRE>
+                                        - small iconic image of lartname
+</PRE>
+
+<P>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?5+lartcap">lartcap</A></I>(5),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?8+lac">lac</A></I>(8),
+
+<I><A HREF="http://localhost/cgi-bin/man/man2html?8+lartd">lartd</A></I>(8)
+
+and 
+<I><A HREF="http://localhost/cgi-bin/man/man2html?1+rlart">rlart</A></I>(1)
+
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUGS</H2>
+
+None found yet, but who really cares?
+<A NAME="lbAH">&nbsp;</A>
+<H2>AUTHORS</H2>
+
+James McPherson
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">FILES</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+<DT><A HREF="#lbAG">BUGS</A><DD>
+<DT><A HREF="#lbAH">AUTHORS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://github.com/hamano/man2html/">man2html</A>,
+using the manual pages.<BR>
+Time: 07:22:14 GMT, April 13, 2018
+</BODY>
+</HTML>
