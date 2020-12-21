@@ -42,10 +42,22 @@
     <div id="gmap"></div>
 
     <div id="controls">
-      <b>緯度経度貼り付け</b>
-      <button onclick="setPastedMarkers()">設置</button>
       <br>
-      <textarea id="pasted_latlngs" placeholder="緯度,経度。カンマ区切り。1行に1個"></textarea>
+      <button onclick="openInfoWindows(true)">open info</button>
+      <button onclick="openInfoWindows(false)">close info</button>
+      <br>
+
+      <b>緯度経度貼り付け</b>
+      <br>
+      順序:
+      <select id="latLngOrder">
+        <option value="latLng">緯度,経度</option>
+        <option value="lngLat">経度,緯度</option>
+      </select>
+      <button onclick="setPastedMarkers()">設置</button>
+      <button onclick="parseLatLngTextArea()">Flexible Parse</button>
+      <br>
+      <textarea id="pasted_latlngs" placeholder="緯度,経度。カンマ区切り。1行に1個。行内に余計な文字が含まれていても可"></textarea>
 
       <b>クリック点</b>
       <br>

@@ -2,6 +2,7 @@ var GOOGLE_KEY = 'AIzaSyBEbWGcg6t8-Kawwdis1xqcFcxdDc5zv7g';
 
 var g_map;
 var g_markers = {};
+var g_infoWindows = [];
 var g_clicked_marker_index = 0; // 実際は1から使用される
 
 $(function() {
@@ -43,7 +44,7 @@ $(function() {
     $('#distance_latlng1').val(formatLatLng(e.latLng));
     calculateDistance();
     g_clicked_marker_index += 1;
-    var marker = addMarker("clicked:" + g_clicked_marker_index, e.latLng, {title: "[" + g_clicked_marker_index + "] " + formatLatLng(e.latLng)});
+    var marker = addMarker("clicked:" + g_clicked_marker_index, e.latLng, {title: "[" + g_clicked_marker_index + "] " + formatLatLng(e.latLng), openInfoWindow: true});
     var $radius = $('#radius');
     if ($radius.val() != '0') {
       drawCircle(e.latLng, parseInt($radius.val()));
@@ -54,7 +55,7 @@ $(function() {
     $('#distance_latlng2').val(formatLatLng(e.latLng));
     calculateDistance();
     g_clicked_marker_index += 1;
-    var marker = addMarker("clicked:" + g_clicked_marker_index, e.latLng, {title: "[" + g_clicked_marker_index + "] " + formatLatLng(e.latLng)});
+    var marker = addMarker("clicked:" + g_clicked_marker_index, e.latLng, {title: "[" + g_clicked_marker_index + "] " + formatLatLng(e.latLng), openInfoWindow: true});
   });
 
   console.log("bounds", g_map.getBounds());
@@ -129,12 +130,32 @@ function setPastedMarkers() {
     if (latlng == null)
       return;
     index += 1;
-    addMarker("pasted:" + index, latlng, {title: "[" + index + "] " + formatLatLng(latlng), color: "purple"});
+    var marker = addMarker("pasted:" + index, latlng, {title: "[" + index + "] " + formatLatLng(latlng), color: "purple", openInfoWindow: true});
+
     last_latlng = latlng;
   });
   if (last_latlng) {
     g_map.setCenter(last_latlng);
   }
+}
+
+function parseLatLngTextArea() {
+  var text = $('#pasted_latlngs').val();
+  var lines = text.split("\n");
+  var last_latlng = null;
+  var resultLines = "";
+  lines.forEach(function(line, index) {
+    if (line.trim() != "") {
+      var latLng = parseLatLng(line);
+      if (latLng == null) {
+        var resultLine = "Parse Error: " + line + "\n";
+      } else {
+        var resultLine = latLng.lat() + "," + latLng.lng() + "," + (index + 1) + "\n";
+      }
+      resultLines += resultLine;
+    }
+  });
+  $('#pasted_latlngs').val(resultLines);
 }
 
 function formatFloat(f) {
@@ -146,12 +167,17 @@ function formatLatLng(latlng) {
 }
 
 function parseLatLng(str) {
-  var cols = str.split(/[^0-9.]+/);
-  if (cols.length < 2) {
+  var m = str.match(/([0-9.+-]+)[^0-9.+-]+([0-9.+-]+)/);
+  if (m == null) {
     return null;
   }
-  var lat = parseFloat(cols[0]);
-  var lng = parseFloat(cols[1]);
+  if ($('#latLngOrder').val() == 'latLng') {
+    var lat = parseFloat(m[1]);
+    var lng = parseFloat(m[2]);
+  } else {
+    var lat = parseFloat(m[2]);
+    var lng = parseFloat(m[1]);
+  }
   // 緯度経度が逆の場合に対応（ただし日本が前提）
   if (lat > lng && 30 < lng && lng < 50 && 120 < lat && lat < 150) {
     var tmp = lat;
@@ -164,7 +190,7 @@ function parseLatLng(str) {
 
 function appendToClickedLatLng(latlng) {
   $ta = $('#clicked_latlngs');
-  $ta.text($ta.text() + formatLatLng(latlng) + "\n");
+  $ta.text($ta.text() + formatLatLng(latlng) + (g_clicked_marker_index + 1) + "\n");
 }
 
 function addMarker(key, latlng, options) {
@@ -186,9 +212,14 @@ function addMarker(key, latlng, options) {
   var infowindow = new google.maps.InfoWindow({
     content: options.title
   });
+  infowindow.marker = marker;
+  g_infoWindows.push(infowindow);
   marker.addListener("click", function() {
     infowindow.open(g_map, marker);
   });
+  if (options.openInfoWindow) {
+    infowindow.open(g_map, marker);
+  }
   return marker;
 }
 
@@ -301,4 +332,14 @@ function round(num, digitsAfterDot) {
     digitsAfterDot = digitsAfterDot || 6;
     var pow = Math.pow(10, digitsAfterDot);
     return Math.floor(num * pow) / pow;
+}
+
+function openInfoWindows(isOpen) {
+  g_infoWindows.forEach(function(infoWindow) {
+    if (isOpen) {
+      infoWindow.open(g_map, infoWindow.marker);
+    } else {
+      infoWindow.close();
+    }
+  });
 }
